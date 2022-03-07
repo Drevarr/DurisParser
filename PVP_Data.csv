@@ -1,0 +1,61 @@
+Date,Location,Good_Group_Count,Evil_Group_Count,RaceWar_Side,Frag_Level,Frag_Class,Frag_Name,Frag_Guild,Frag_Race,Log_Number
+03/03/22 09:19PM,A Cobblestone Road,8,1,Evils,32,MaUleR,Drip,*-* Warlords *-* ,Minotaur,274300
+03/03/22 09:19PM,A Cobblestone Road,8,2,Evils,32,Necrolyte,Straut,*-* Warlords *-* ,Drider,274290
+03/03/22 08:52PM,Along an Ancient Stone Bridge,1,6,Goodies,33,MaUleR,Teru,-=Celestial Sigil=- ,Barbarian,274279
+03/03/22 08:51PM,Along an Ancient Stone Bridge,5,7,Evils,32,Earth Magus,Zlo,*-* Warlords *-* ,Drow Elf,274264
+03/03/22 08:48PM,Vast Grasslands Within the DarkPeak Valley,5,1,Evils,32,Thief,Rex,*-* Warlords *-* ,Goblin,274258
+03/03/22 08:32PM,Along a Coarse Gravel Road in the DarkPeak Valley,1,1,Goodies,33,Pyrokinetic,Aik,-=Celestial Sigil=- ,Githzerai,274251
+03/03/22 09:37AM,The Waters of the Abyss,1,2,Goodies,33,Forest Druid,Hoof,-=Celestial Sigil=- ,Centaur,274245
+03/03/22 02:58AM,The Graveyard of Storm Port,1,5,Goodies,33,Pyrokinetic,Eikel,-=Celestial Sigil=- ,Githzerai,274241
+03/03/22 01:41AM,The Market Square,2,2,Goodies,33,Pyrokinetic,Eikel,-=Celestial Sigil=- ,Githzerai,274235
+03/03/22 01:41AM,The Market Square,4,3,Goodies,33,Air Magus,Xavio,-=Celestial Sigil=- ,Grey Elf,274226
+03/03/22 01:41AM,The Market Square,4,5,Evils,32,Bounty Hunter,Nul,*-* Warlords *-* ,Troll,274215
+03/03/22 01:41AM,The Market Square,5,5,Goodies,30,Cleric,Leu,-=Celestial Sigil=- ,Grey Elf,274210
+03/03/22 01:40AM,The Market Square,5,5,Evils,32,Air Magus,Bokk,*-* Warlords *-* ,Drow Elf,274195
+03/03/22 01:40AM,The Market Square,1,6,Goodies,31,Forest Druid,Aur,-=Celestial Sigil=- ,Halfling,274190
+03/02/22 07:37AM,In Front of the Large Double Doors of the Holy Cathedral,1,2,Goodies,24,Sorcerer,Barsuka, ,Gnome,274183
+03/02/22 03:24AM,A Battered Hillside Above a Hole,5,1,Evils,24,Shaman,Moh, ,Troll,274179
+03/02/22 02:49AM,An Underground Tunnel,7,1,Evils,32,Cleric,Nollej,*-* Warlords *-* ,Duergar,274172
+03/02/22 01:56AM,Endless Plains of Grassy Pastures,1,1,Goodies,1,Cleric,Duvak, ,Grey Elf,274165
+03/01/22 11:53PM,Along the Beach,1,1,Goodies,31,RaGeloRd,Basuka,-=Celestial Sigil=- ,Barbarian,274163
+03/01/22 11:03PM,Entrance to an Underground Hideout,5,1,Evils,32,Holyman,Obi,*-* Warlords *-* ,Duergar,274160
+03/01/22 11:00PM,Entrance to an Underground Hideout,3,1,Evils,32,Guardian,Argo,*-* Warlords *-* ,Troll,274154
+03/01/22 10:57PM,Entrance to an Underground Hideout,1,3,Evils,27,BeRSeRKeR,Obe,*-* Warlords *-* ,Troll,274148
+03/01/22 10:55PM,Entrance to an Underground Hideout,2,1,Evils,32,Ruiner,Dozz,*-* Warlords *-* ,Drider,274145
+03/01/22 08:51PM,On the Bridge of the Caravel  Rubber Ducky,1,2,Goodies,31,Necrolyte,Shi,-=Celestial Sigil=- ,Githzerai,274141
+03/01/22 08:48PM,The Waters of the Abyss,1,2,Goodies,31,Pyrokinetic,Aik,-=Celestial Sigil=- ,Githzerai,274135
+03/01/22 04:51AM,An Open Air Market,2,1,Evils,15,Anti-Paladin,Taim, ,Orc,274128
+03/01/22 04:36AM,The Waters of the Abyss,1,4,Goodies,31,Necrolyte,Shi,-=Celestial Sigil=- ,Githzerai,274125
+03/01/22 04:24AM,Compact Soldier's Barracks,4,1,Evils,25,BeRSeRKeR,Jacut, ,Troll,274116
+03/01/22 01:33AM,Fertile Grasslands of the Hearth Valley,1,1,Evils,26,Conjurer,Zlo,*-* Warlords *-* ,Drow Elf,274111
+02/28/22 11:56PM,A Rock-Strewn Embankment,4,1,Evils,31,Thief,Rex,*-* Warlords *-* ,Goblin,274109
+02/28/22 11:56PM,A Rock-Strewn Embankment,4,2,Evils,31,Bounty Hunter,Nul,*-* Warlords *-* ,Troll,274102
+02/28/22 07:54AM,A Cobblestone Road,1,1,Evils,7,Conjurer,Frez, ,Minotaur,274096
+02/28/22 05:52AM,The Beginning of Newhaven Way,1,1,Goodies,21,Monk,Poti, ,Human,274095
+02/28/22 05:00AM,Above the Crypt,1,1,Goodies,23,Monk,Mx, ,Human,274093
+02/28/22 02:05AM,The Glowing Sphere,1,1,Goodies,31,Forest Druid,Que,-=Celestial Sigil=- ,Centaur,274089
+02/28/22 01:53AM,On the Apex of the Prison,2,4,Evils,25,Blighter,Syl, ,Drider,274081
+02/28/22 01:43AM,Grassy Hills Covered with Exotic Shrubs,1,1,Goodies,24,Warrior,Illiak, ,Thri-Kreen,274079
+02/27/22 10:08PM,a Well Traveled Path,1,1,Evils,26,Rogue,Rios, ,Goblin,274076
+02/27/22 09:31PM,The Waters of the Abyss,3,1,Evils,30,Zealot,Fraglord, ,Duergar,274068
+02/27/22 09:23PM,The Waters of the Abyss,1,1,Evils,21,Conjurer,Sadash, ,Kobold,274058
+02/27/22 09:21PM,The Outer Wall,1,1,Evils,15,Mercenary,Hort, ,Troll,274056
+02/27/22 05:15PM,A Well Traveled Path,1,1,Evils,27,Sorcerer,Sylvist, ,Drider,274054
+02/27/22 05:15PM,The Fountain of Shairak,1,2,Evils,25,Rogue,Rios, ,Goblin,274051
+02/27/22 05:14PM,The Fountain of Shairak,1,3,Evils,25,Necromancer,Nemir, ,Goblin,274047
+02/26/22 09:01AM,A Mushroom Forest Covered in Spider Webs,1,2,Goodies,26,Sorcerer,Denel, ,Grey Elf,274046
+02/26/22 07:36AM,A Lavish Hallway,1,5,Goodies,25,Sorcerer,Denel, ,Grey Elf,274041
+02/26/22 07:36AM,A Lavish Hallway,1,5,Evils,16,Bard,Xod, ,Drow Elf,274029
+02/26/22 06:27AM,The Great Sylvan Woods of Mielikki,1,2,Goodies,1,Sorcerer,Aq, ,Grey Elf,274028
+02/26/22 03:56AM,A Side Hallway,1,1,Evils,56,Warrior,Oxod, ,Ogre,274024
+02/26/22 03:56AM,Vella's Room of Seduction,1,1,Evils,56,Ruiner,Var,-=Denizens of Lloth=- ,Drider,274022
+02/26/22 03:56AM,Vella's Room of Seduction,2,1,Evils,55,Warrior,Xananchat,-=Denizens of Lloth=- ,Ogre,274020
+02/26/22 03:56AM,Vella's Room of Seduction,1,1,Evils,15,BeRSeRKeR,Id, ,Minotaur,274017
+02/26/22 03:56AM,Vella's Room of Seduction,1,1,Evils,4,Warrior,Woxchat, ,Githyanki,274013
+02/26/22 03:56AM,Vella's Room of Seduction,1,1,Evils,53,Shock Reaver,Fig, ,Drow Elf,274015
+02/26/22 03:55AM,Vella's Room of Seduction,2,1,Evils,56,Earth Reaver,Bok, ,Goblin,274011
+02/26/22 02:07AM,Rugged Hills of the Hearth Valley,2,1,Evils,56,Bounty Hunter,Albo,-=Denizens of Lloth=- ,Troll,274008
+02/26/22 02:07AM,Rugged Hills of the Hearth Valley,1,1,Goodies,56,RaGeloRd,Cisil, ,Minotaur,274006
+02/25/22 11:35PM,The Fog Enshrouded Forest,1,1,Evils,55,Brigand,Mazz, ,Duergar,274003
+02/25/22 08:24PM,A Dense Forest on the Island of Dragons,1,1,Evils,55,MaUleR,Karnic, ,Duergar,274001
+02/25/22 08:21PM,Outside the City of Dragonnia,2,1,Evils,55,MaUleR,Karnic, ,Duergar,273999
