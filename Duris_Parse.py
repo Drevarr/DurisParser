@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #    Duris_Parse.py contains tools for retrieving PvP log data for DurisMUD.
-#    Copyright (C) 2021 Freya Fleckenstein
+#    Copyright (C) 2021 John Long
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ from pprint import pprint
 import re
 import csv
 import requests
-
+import Parse_Page
 
 #TO DO
 #refactor for functions
@@ -32,7 +32,8 @@ import requests
 # 
 # 
 
-
+Num_Pages = 1
+Latest_Log = 275010
 
 # open the file in the write mode
 with open("PVP_Data.csv", "w", newline='') as f:
@@ -47,73 +48,7 @@ with open("PVP_Data.csv", "w", newline='') as f:
     q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
     URL = 'https://www.durismud.com/pvp/events?page='
   
-    for page in range(1,3):
-        req = requests.get(URL + str(page))
-        soup = BeautifulSoup(req.text, "html5lib")
-        table = soup.find('table')
-        tbody = table.find('tbody')
-        rows = tbody.findAll("tr", recursive=False)
-        for row in rows:
-            if len(row)==9:
-                col = row.findAll ("td", recursive=False)
-                Date = col[0].text
-                Location = col[1].text.strip()
-                Goods = col[2].text.strip()
-                #Process the Good Group subtable to capture each row Data
-                Good_Group = []
-                Good_Group_Count = 0
-                Good_Frag = ""
-                Good_Tds = col[2].findAll("td", class_="nowrap")
-                for Good_Td in Good_Tds:
-                    Good_Group_Count += 1
-                    Good_Group.append(Good_Td.text.strip())
-                    if Good_Td.find("span", class_="blood"):
-                        RaceWar_Side = "Goodies"
-                        Good_Frag = Good_Td.text.strip()
-                        m = p.match(Good_Frag)
-                        FragDict = m.groupdict()
-                        Frag_Level = FragDict['PC_LEVEL']
-                        Frag_Class = FragDict['PC_CLASS']
-                        Frag_Name = FragDict['PC_NAME']
-                        Frag_Guild = FragDict['PC_GUILD']
-                        Frag_Race = FragDict['PC_RACE']
-                        #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
-                        FragLink = Good_Td.find(href=True)
-                        link = FragLink['href']
-                        r = q.match(link)
-                        Log_Number = r[1]
-
-                Evils = col[3].text.strip("\n")
-                #Process the Evils Group subtable to capture each row Data
-                Evil_Group = []
-                Evil_Group_Count = 0
-                Evil_Frag = ""
-                Evil_Tds = col[3].findAll("td", class_="nowrap")
-                for Evil_Td in Evil_Tds:
-                    Evil_Group_Count += 1
-                    Evil_Group.append(Evil_Td.text.strip())
-                    if Evil_Td.find("span", class_="blood"):
-                        RaceWar_Side = "Evils"
-                        Evil_Frag = Evil_Td.text.strip()
-                        m = p.match(Evil_Frag)
-                        FragDict = m.groupdict()
-                        Frag_Level = FragDict['PC_LEVEL']
-                        Frag_Class = FragDict['PC_CLASS']
-                        Frag_Name = FragDict['PC_NAME']
-                        Frag_Guild = FragDict['PC_GUILD']
-                        Frag_Race = FragDict['PC_RACE']
-                        #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
-                        FragLink = Good_Td.find(href=True)
-                        link = FragLink['href']
-                        r = q.match(link)
-                        Log_Number = r[1]
-
-                # test print the info
-                print_string = (Date+', '+Location+', '+str(Good_Group_Count)+', '+str(Evil_Group_Count)+', '+RaceWar_Side+', '+Frag_Level+', '+Frag_Class+', '+Frag_Name+', '+Frag_Guild+', '+Frag_Race+', '+Log_Number)
-                print (print_string)
-                # write a row to the csv file
-                writer.writerow([Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Log_Number])
-
+    Parse_Page(Latest_Log, Num_Pages)
 
 
 print ("Processing Complete. See file: PVP_Data.csv")
