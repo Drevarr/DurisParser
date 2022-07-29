@@ -1,5 +1,5 @@
 # DurisParser
-Python script to scrap and parse DurisMUD PvP data
+Python script to scrape and parse DurisMUD PvP data
 
 Utilizes BS4 to scrape PvP fight logs from https://www.durismud.com/pvp to
 provide data for charting activity for each season.
