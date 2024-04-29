@@ -129,12 +129,16 @@ def Parse_Page(number, pages):
                 #insert the new data if not already in table based on Log_Number
                 #sql_insert(con, LogData)
                 print(str(Good_Group_Logs))
+                print(type(Good_Group_Logs))
                 print(str(Evil_Group_Logs))
+                print(type(Evil_Group_Logs))
 
-                #for log in Good_Group_Logs:
-                    #cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', log)
-                #for log in Evil_Group_Logs:
-                    #cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', log)
+                for log in Good_Group_Logs:
+                    entry=str(log)
+                    cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
+                for log in Evil_Group_Logs:
+                    entry=str(log)
+                    cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
                     
                 # Insert the PVP data into the table
                 cursor.execute('INSERT OR IGNORE INTO Fight_Logs (Log_Number, Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',

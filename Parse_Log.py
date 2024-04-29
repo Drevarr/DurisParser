@@ -6,7 +6,7 @@ import requests
 import sqlite3
 
 apiStatus = True
-listOfLogs = ["295710","295709","295708","295707","295706","295705","295704","295703","295702","295701"]
+listOfLogs = []
 
 # REGEX for parsing elements
 DmgLine = re.compile("\[Damage: (\d+) \]")
@@ -30,6 +30,16 @@ conn.execute('''CREATE TABLE IF NOT EXISTS POV_Logs (
     Average_Pulse_Damage, 
     Pulses
 );''')
+
+#Select all rows from table Logs where Log_Number is not in table POV_Logs stored in listOfLogs
+query = "SELECT * FROM Logs WHERE Log_Number NOT IN (SELECT Log_Number FROM POV_Logs)"
+cursor.execute(query)
+
+# Fetch all the rows
+rows = cursor.fetchall()
+
+for item in rows:
+    listOfLogs.append(item[0])
 
 # open the file in the write mode
 with open("PVP_Logs.csv", "w", newline='') as f:
