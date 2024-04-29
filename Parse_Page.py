@@ -93,9 +93,9 @@ def Parse_Page(number, pages):
                 
                 # Set LogData for insertion into sqlite3 db
                 LogData = (Log_Number, Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Evil_Group))
-                
+                print(LogData)
                 #insert the new data if not already in table based on Log_Number
-                sql_insert(con, LogData)
+                #sql_insert(con, LogData)
                 
                 #commit new data
-                con.commit()
+                #con.commit()
