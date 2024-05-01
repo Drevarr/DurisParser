@@ -49,7 +49,9 @@ def Parse_Page(number, pages):
         for row in rows:
             if len(row)==9:
                 col = row.findAll ("td", recursive=False)
-                Date = col[0].text
+                #.split()
+                Date = col[0].text.split()[0]
+                Time = col[0].text.split()[1]
                 Location = col[1].text.strip()
                 #Process the Good Group subtable to capture each row Data
                 Good_Group = []
@@ -123,8 +125,8 @@ def Parse_Page(number, pages):
                 writer.writerow([Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Log_Number, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs)])
                 
                 # Set LogData for insertion into sqlite3 db
-                LogData = (Log_Number, Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs))
-                print("(Log_Number, Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Evil_Group))")
+                LogData = (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs))
+                print("(Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Evil_Group))")
                 print(LogData)
                 #insert the new data if not already in table based on Log_Number
                 #sql_insert(con, LogData)
@@ -141,7 +143,7 @@ def Parse_Page(number, pages):
                     cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
                     
                 # Insert the PVP data into the table
-                cursor.execute('INSERT OR IGNORE INTO Fight_Logs (Log_Number, Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                cursor.execute('INSERT OR IGNORE INTO Fight_Logs (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                         LogData)
                  
                 #commit new data
@@ -156,6 +158,7 @@ cursor = conn.cursor()
 conn.execute('''CREATE TABLE IF NOT EXISTS Fight_Logs (
     Log_Number PRIMARY KEY,
     Date,
+    Time,
     Location,
     Good_Group_Count,
     Evil_Group_Count,
@@ -179,7 +182,7 @@ with open("PVP_Data.csv", "w", newline='') as f:
     writer = csv.writer(f)
 
     # write the header
-    writer.writerow(["Date", "Location", "Good_Group_Count", "Evil_Group_Count", "RaceWar_Side", "Frag_Level", "Frag_Class", "Frag_Name", "Frag_Guild", "Frag_Race", "Log_Number", "Good Group", "Good Group Logs", "Evil Group", "Evil Group Logs"])
+    writer.writerow(["Date", "Time",  "Location", "Good_Group_Count", "Evil_Group_Count", "RaceWar_Side", "Frag_Level", "Frag_Class", "Frag_Name", "Frag_Guild", "Frag_Race", "Log_Number", "Good Group", "Good Group Logs", "Evil Group", "Evil Group Logs"])
 
     # REGEX for parsing elements
     p = re.compile(r'\[\s*(?P<PC_LEVEL>\d*)\s(?P<PC_CLASS>.*)]\s(?P<PC_NAME>\w*)\s(?P<PC_GUILD>.*)\((?P<PC_RACE>.*)\)\s*')
