@@ -9,15 +9,18 @@ apiStatus = True
 listOfLogs = []
 
 # REGEX for parsing elements
-DmgLine = re.compile("\[Damage: (\d+) \]")
+DmgLine = re.compile("\[Damage:\s+(\d+)\s+\]")
 PromptLine = re.compile("< (?P<Cur_HP>\d+)h/(\d+)H (\d+)v/(\d+)V Pos: (.*) >")
+RacesGood = re.compile("(a Human|a Barbarian|a Grey Elf|a Mountain Dwarf|a Halfling|a Gnome|a Centaur|a Githzerai|a Firbolg)")
+RacesNeutral = re.compile("(a Thri-Kreen|a Minotaur|a Shade|a ShadowBeast|a Vampire)")
+RacesEvil = re.compile("(an Orc|a Troll|a Drow Elf|a Duergar|a Goblin|a Kobold|an Ogre|a Githyanki|a Drider)")
 
 # URL for fetching LogNumber
 URL = 'https://www.durismud.com/pvp/logs/'
 
 
 # Connect to the database
-conn = sqlite3.connect('PVP_Logs.db')
+conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')
 cursor = conn.cursor()
 
 
@@ -59,12 +62,17 @@ with open("PVP_Logs.csv", "w", newline='') as f:
 
         textLog = pvpLog.get_text()
 
+        print(f"Processing PVP Log: {log}")
+
         for line in textLog.splitlines():
                 
             foundDmg = DmgLine.findall(line)
-            for item in foundDmg:
-                pulseDamage +=int(item)
-            
+            foundEnemy = RacesGood.findall(line) or RacesNeutral.findall(line) or RacesEvil.findall(line)  
+
+            if foundEnemy:
+                for item in foundDmg:
+                    pulseDamage +=int(item)
+                
             foundPrompt = PromptLine.match(line)
             if foundPrompt:
                 if pulseDamage:
@@ -80,7 +88,7 @@ with open("PVP_Logs.csv", "w", newline='') as f:
             totalDamage = sum(pulseDamageList) or 0
             maxPulse = max(pulseDamageList) or 0
             minPulse = min(pulseDamageList) or 0
-            avgPulse = sum(pulseDamageList)/len(pulseDamageList) or 0
+            avgPulse = round(sum(pulseDamageList)/len(pulseDamageList),1) or 0
             pulses = len(pulseDamageList) or 0
 
             # write a row to the csv file

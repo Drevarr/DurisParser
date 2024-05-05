@@ -1,0 +1,14 @@
+Date,Time,Location,Good_Group_Count,Evil_Group_Count,RaceWar_Side,Frag_Level,Frag_Class,Frag_Name,Frag_Guild,Frag_Race,Log_Number,Good Group,Good Group Logs,Evil Group,Evil Group Logs
+05/05/24,The Tropical Jungles of Khomani-Khan,1,1,Evils,7,Dreadlord,Osi, ,Vampire,295844,['[32 Spiritualist] Col o==(=Mithril=Knights=- (Grey Elf)'],['295843'],['[ 7 Dreadlord] Osi  (Vampire)'],['295844']
+05/05/24,Wide Dusty Path leading to a Tent,1,1,Evils,22,Conjurer,Kymaz, ,Vampire,295842,['[32 Spiritualist] Col o==(=Mithril=Knights=- (Grey Elf)'],['295841'],['[22 Conjurer] Kymaz  (Vampire)'],['295842']
+05/05/24,a Well Traveled Path,5,1,Evils,23,Rogue,Yzar, ,Goblin,295840,"['[29 Warrior] Goonda  (Centaur)', '[32 Spiritualist] Col  (Grey Elf)', '[26 Psionicist] Poks  (Githzerai)', '[26 Cleric] Ruk  (Grey Elf)', '[31 Earth Magus] Roz  (Grey Elf)']","['295833', '295834', '295836', '295837', '295839']",['[23 Rogue] Yzar  (Goblin)'],['295840']
+05/05/24,The Chamber of the Archmage,1,1,Evils,6,Conjurer,Kymaz, ,Vampire,295832,['[22 Sorcerer] Mussa  (Vampire)'],['295831'],['[ 6 Conjurer] Kymaz  (Vampire)'],['295832']
+05/04/24,A Jagged Niche of Rocks and Large Roots,1,1,Evils,21,Shaman,Maworg, ,Shade,295830,['[31 Sorcerer] Nom  (Gnome)'],['295829'],['[21 Shaman] Maworg  (Shade)'],['295830']
+05/04/24,In the Heart of a Swamp,1,1,Goodies,3,Dreadlord,Iblis, ,Vampire,295828,['[ 3 Dreadlord] Iblis  (Vampire)'],['295828'],['[16 Conjurer] Yost  (Vampire)'],['295827']
+05/04/24,Inside the Citadel of Darkness,1,7,Goodies,31,Spiritualist,Col, ,Grey Elf,295826,['[31 Spiritualist] Col  (Grey Elf)'],['295826'],"['[31 Mercenary] Myrk  (Duergar)', '[29 Cleric] Gukk  (Duergar)', '[30 Rogue] Alfy  (Duergar)', '[29 Cleric] Choron  (Duergar)', '[29 Anti-Paladin] Kiria  (Githyanki)', '[30 Psionicist] Ra  (Githyanki)', '[28 Psionicist] Potius  (Githyanki)']","['295818', '295819', '295820', '295821', '295822', '295823', '295824']"
+05/04/24,The Lush Grasslands of Khomani-Khan,1,1,Goodies,15,Mercenary,Chaosgod, ,ShadowBeast,295817,['[15 Mercenary] Chaosgod  (ShadowBeast)'],['295817'],['[25 Shaman] Omm  (Troll)'],['295816']
+05/04/24,A Dirty Living Area,1,1,Evils,20,Sorcerer,Kymax, ,Vampire,295815,['[27 Conjurer] Matik  (Grey Elf)'],['295814'],['[20 Sorcerer] Kymax  (Vampire)'],['295815']
+05/04/24,Horses Stables,1,1,Goodies,13,Sorcerer,Grimsorc, ,Vampire,295813,['[13 Sorcerer] Grimsorc  (Vampire)'],['295813'],['[16 Sorcerer] Kymax  (Vampire)'],['295812']
+05/04/24,The Chamber of the Archmage,1,1,Goodies,10,Sorcerer,Grimsorc, ,Vampire,295811,['[10 Sorcerer] Grimsorc  (Vampire)'],['295811'],['[ 6 Sorcerer] Kymax  (Vampire)'],['295810']
+05/04/24,Pitted Path Leading to the Village,1,1,Evils,3,Sorcerer,Kymax, ,Vampire,295809,['[13 Conjurer] Naj  (Vampire)'],['295808'],['[ 3 Sorcerer] Kymax  (Vampire)'],['295809']
+05/04/24,A Dusty Trail,1,1,Evils,3,Bard,Pohet, ,Vampire,295807,['[25 Warrior] Astos  (Thri-Kreen)'],['295806'],['[ 3 Bard] Pohet  (Vampire)'],['295807']
