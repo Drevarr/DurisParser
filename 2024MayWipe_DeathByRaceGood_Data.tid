@@ -1,0 +1,27 @@
+created: 20240522224016
+creator: Drevarr
+tags: ChartData
+title: 2024MayWipe_DeathByRaceGood_Data
+type: text/vnd.tiddlywiki
+
+            option = {
+            title: {
+                text: 'Good Race Deaths'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Barbarian', 'Centaur', 'Dwarf', 'Githzerai', 'Gnome', 'Grey Elf', 'Halfling', 'Human', 'ShadowBeast', 'Vampire']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                data: [4, 3, 1, 13, 1, 5, 4, 2, 1, 16],
+                type: 'bar'
+                }
+            ]
+            };

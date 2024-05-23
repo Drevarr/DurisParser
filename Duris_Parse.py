@@ -197,4 +197,4 @@ with open("PVP_Logs_May_2024_Wipe.csv", "w", newline='') as f:
 conn.commit()
 conn.close()
 
-print ("Processing Complete. See file: PVP_Data.csv or PVP_Logs.db")
+print ("Processing Complete. See file: PVP_Logs_May_2024_Wipe.csv or PVP_Logs.db")
