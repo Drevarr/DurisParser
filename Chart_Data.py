@@ -194,6 +194,25 @@ for date in DeathDates:
     avgEvils = sum(GroupSizeData[date]['Evils'])/len(GroupSizeData[date]['Evils'])
     print (f"      ['{str(date)}', {cntFights}, {round(avgGoods,2)}, {round(avgEvils,2)}],")
 
+#Collect Deaths by RaceWar_Side and name for chart data
+NamedDeaths={}
+NamedDeaths['Evils']={}
+NamedDeaths['Goods']={}
+
+for row in DurisData:
+    Name=row[9]
+    Side=row[6]
+    if Side == 'Evils':
+        if Name not in NamedDeaths['Evils']:
+            NamedDeaths['Evils'][Name] = 1
+        else:
+            NamedDeaths['Evils'][Name] += 1
+    else:
+        if Name not in NamedDeaths['Goods']:
+            NamedDeaths['Goods'][Name] = 1
+        else:
+            NamedDeaths['Goods'][Name] += 1
+
 
 #write echarts .tid file with chart data
 ChartList =[
@@ -204,6 +223,8 @@ ChartList =[
     '2024MayWipe_DeathByDay_Data',
     '2024MayWipe_DeathTotals',
     '2024MayWipe_TotalDamage_Data',
+    '2024MayWipe_EvilDeathsByName_Data',
+    '2024MayWipe_GoodDeathsByName_Data',
     ]
 
 for item in ChartList:
@@ -454,7 +475,7 @@ type: text/vnd.tiddlywiki
             print_String = str(header)
             print_String+=",\n"
             f.write(print_String)
-            UpperBoundDamage=300
+            UpperBoundDamage=0
             for i in range(100, -1, -1):
                 DataList = []
                 NameAndLog = LogNames[PovTotalDamageData[i][0]]+"-Log:"+str(PovTotalDamageData[i][0])
@@ -528,5 +549,121 @@ type: text/vnd.tiddlywiki
 			}}
 		    ]
 		    }};"""
+            f.write(print_String)
+            f.close()
+
+        if item == '2024MayWipe_EvilDeathsByName_Data':
+            sorted_dict = sorted(NamedDeaths['Evils'].items(), key=lambda x: x[1], reverse = True)
+            VisualMapMax = 0
+            print_String = f"""
+option = {{
+    dataset: {{
+    source: [
+    ['Name', 'Deaths'],
+"""
+            f.write(print_String)
+
+            for i in range(25):
+                print_String = f"    ['{list(sorted_dict[i])[0]}', {list(sorted_dict[i])[1]}],\n"
+                f.write(print_String)
+                if sorted_dict[i][1] > VisualMapMax:
+                    VisualMapMax = sorted_dict[i][1]
+
+            print_String = f"""
+    ]
+  }},
+  grid: {{ containLabel: true }},
+  title: {{
+    text: 'Player Deaths - Evils',
+    subtext: '          Top 25 Player Deaths - Evils'
+  }},
+  xAxis: {{ name: 'Deaths' }},
+  yAxis: {{
+    type: 'category',
+    inverse: true
+    }},
+  visualMap: {{
+    orient: 'horizontal',
+    left: 'center',
+    min: 1,
+    max: {VisualMapMax},
+    //inverse: true,
+    text: ['High Score', 'Low Score'],
+    // Map the score column to color
+    dimension: 1,
+    inRange: {{
+      color: ['#65B581', '#FFCE34', '#FD665F']
+    }}
+  }},
+  series: [
+    {{
+      type: 'bar',
+      encode: {{
+        // Map the "amount" column to X axis.
+        x: 'Deaths',
+        // Map the "product" column to Y axis
+        y: 'Name'
+      }}
+    }}
+  ]
+}};"""
+            f.write(print_String)
+            f.close()
+
+        if item == '2024MayWipe_GoodDeathsByName_Data':
+            sorted_dict = sorted(NamedDeaths['Goods'].items(), key=lambda x: x[1], reverse = True)
+            VisualMapMax = 0
+            print_String = f"""
+option = {{
+    dataset: {{
+    source: [
+    ['Name', 'Deaths'],
+"""
+            f.write(print_String)
+
+            for i in range(25):
+                print_String = f"    ['{list(sorted_dict[i])[0]}', {list(sorted_dict[i])[1]}],\n"
+                f.write(print_String)
+                if sorted_dict[i][1] > VisualMapMax:
+                    VisualMapMax = sorted_dict[i][1]
+
+            print_String = f"""
+    ]
+  }},
+  grid: {{ containLabel: true }},
+  title: {{
+    text: 'Player Deaths - Goods',
+    subtext: '          Top 25 Player Deaths - Goods'
+  }},
+  xAxis: {{ name: 'Deaths' }},
+  yAxis: {{
+    type: 'category',
+    inverse: true
+    }},
+  visualMap: {{
+    orient: 'horizontal',
+    left: 'center',
+    min: 1,
+    max: {VisualMapMax},
+    //inverse: true,
+    text: ['High Score', 'Low Score'],
+    // Map the score column to color
+    dimension: 1,
+    inRange: {{
+      color: ['#65B581', '#FFCE34', '#FD665F']
+    }}
+  }},
+  series: [
+    {{
+      type: 'bar',
+      encode: {{
+        // Map the "amount" column to X axis.
+        x: 'Deaths',
+        // Map the "product" column to Y axis
+        y: 'Name'
+      }}
+    }}
+  ]
+}};"""
             f.write(print_String)
             f.close()

@@ -1,0 +1,73 @@
+created: 20240524135516
+creator: Drevarr
+tags: ChartData
+title: 2024MayWipe_EvilDeathsByName_Data
+type: text/vnd.tiddlywiki
+
+option = {
+    dataset: {
+    source: [
+    ['Name', 'Deaths'],
+    ['Ra', 8],
+    ['Kymaz', 4],
+    ['Sha', 4],
+    ['Liels', 4],
+    ['Cynee', 4],
+    ['Toki', 4],
+    ['Omm', 3],
+    ['Zhad', 3],
+    ['Kru', 3],
+    ['Zoku', 3],
+    ['Keebler', 3],
+    ['Lodik', 3],
+    ['Mori', 3],
+    ['Yzarafk', 3],
+    ['Yzar', 2],
+    ['Kymax', 2],
+    ['Pohet', 2],
+    ['Choron', 2],
+    ['Jixan', 2],
+    ['Krey', 2],
+    ['Zhadrak', 2],
+    ['Tag', 2],
+    ['Gukk', 2],
+    ['Moogrok', 2],
+    ['Feskarmann', 2],
+
+    ]
+  },
+  grid: { containLabel: true },
+  title: {
+    text: 'Player Deaths - Evils',
+    subtext: '          Top 25 Player Deaths - Evils'
+  },
+  xAxis: { name: 'Deaths' },
+  yAxis: {
+    type: 'category',
+    inverse: true
+    },
+  visualMap: {
+    orient: 'horizontal',
+    left: 'center',
+    min: 1,
+    max: 8,
+    //inverse: true,
+    text: ['High Score', 'Low Score'],
+    // Map the score column to color
+    dimension: 1,
+    inRange: {
+      color: ['#65B581', '#FFCE34', '#FD665F']
+    }
+  },
+  series: [
+    {
+      type: 'bar',
+      encode: {
+        // Map the "amount" column to X axis.
+        x: 'Deaths',
+        // Map the "product" column to Y axis
+        y: 'Name'
+      }
+    }
+  ]
+};
