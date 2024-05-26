@@ -1,6 +1,7 @@
 # fetch rows from PVP_logs table Fight_Logs and logs in good and evil groups that are in pov logs table
 import sqlite3
 import ast
+import re
 from datetime import datetime
 
 #LogNames dictionary of log Numbers as key and POV Name as value
@@ -213,6 +214,28 @@ for row in DurisData:
         else:
             NamedDeaths['Goods'][Name] += 1
 
+#Collect Class Damage per fight
+PlayerClassDamage = {}
+
+for row in PovTotalDamageData:
+    longName = LogNames[row[0]]
+    playerClassRegex = re.compile(r'\[\s*\d+ (.*)]') 
+    pc = playerClassRegex.search(longName) 
+    playerClass = pc.group(1)
+    maxDamage = row[2]
+    #print(playerClass, maxDamage)
+    if playerClass not in PlayerClassDamage:
+        PlayerClassDamage[playerClass]=[]
+    PlayerClassDamage[playerClass].append(maxDamage)
+
+PlayerClassMaxDamage={}
+for spec in PlayerClassDamage:
+    MaxSpecDmg = round(sum(PlayerClassDamage[spec])/len(PlayerClassDamage[spec]),2)
+    PlayerClassMaxDamage[spec] = MaxSpecDmg
+
+sorted_PlayerClassMaxDamage = sorted(PlayerClassMaxDamage.items(), key=lambda x: x[1], reverse = True)
+
+
 
 #write echarts .tid file with chart data
 ChartList =[
@@ -225,6 +248,7 @@ ChartList =[
     '2024MayWipe_TotalDamage_Data',
     '2024MayWipe_EvilDeathsByName_Data',
     '2024MayWipe_GoodDeathsByName_Data',
+    '2024MayWipe_PlayerClassMaxDamage_Data'
     ]
 
 for item in ChartList:
@@ -582,6 +606,7 @@ option = {{
     type: 'category',
     inverse: true
     }},
+  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}}],    
   visualMap: {{
     orient: 'horizontal',
     left: 'center',
@@ -640,6 +665,7 @@ option = {{
     type: 'category',
     inverse: true
     }},
+  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}}],
   visualMap: {{
     orient: 'horizontal',
     left: 'center',
@@ -667,3 +693,79 @@ option = {{
 }};"""
             f.write(print_String)
             f.close()
+        
+        if item == '2024MayWipe_PlayerClassMaxDamage_Data':
+            SpecList=[]
+            for spec in sorted_PlayerClassMaxDamage:
+                SpecList.append(spec[0])
+            #sorted_PlayerClassMaxDamage
+            print_String = f"\nconst professions = {SpecList}"
+
+            f.write(print_String)
+
+            print_String = f"""
+
+option = {{
+  title: [
+    {{text: 'Max Pulse Damage by Class across all fights', left: 'center'}},
+    {{text: 'upper: Q3 + 1.5 * IQR \\nlower: Q1 - 1.5 * IQR', borderColor: '#999', borderWidth: 1, textStyle: {{fontSize: 12}}, left: '10%', top: '88%'}}
+  ],
+dataset: [
+    {{
+      // prettier-ignore
+      source: ["""
+
+            f.write(print_String)
+
+            for spec in sorted_PlayerClassMaxDamage:
+                print_String = f"{PlayerClassDamage[spec[0]]},\n"
+                f.write(print_String)
+
+            print_String = f"""]
+    }},
+    {{
+      transform: {{
+        type: 'boxplot',
+        config: {{
+          itemNameFormatter: function (params) {{
+            return professions[params.value];
+          }}
+        }}
+      }},
+    }},
+    {{
+      fromDatasetIndex: 1,
+      fromTransformResult: 1
+    }}
+  ],
+  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}}],
+  tooltip: {{trigger: 'item', axisPointer: {{type: 'shadow'}}}},
+  grid: {{left: '10%', right: '10%', bottom: '15%'}},
+  yAxis: {{type: 'category', boundaryGap: true, nameGap: 30, splitArea: {{show: true}}, splitLine: {{show: true}},inverse: true}},
+  xAxis: {{type: 'value', name: 'Max Pulse Damage', splitArea: {{show: true}}}},
+  series: [
+    {{
+      name: 'boxplot',
+      type: 'boxplot',
+      datasetIndex: 1,
+      itemStyle: {{
+        color: function(seriesIndex) {{
+        	console.log(datasetIndex);
+          return colors[seriesIndex];
+        }}
+      }},
+      encode:{{tooltip: [ 1, 2, 3, 4, 5]}},
+      }},
+    {{
+      name: 'outlier',
+      type: 'scatter',
+      encode: {{ x: 1, y: 0 }},
+      datasetIndex: 2
+    }}
+  ]
+}};
+"""
+
+            f.write(print_String)
+            f.close()
+

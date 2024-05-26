@@ -1,4 +1,4 @@
-created: 20240524135516
+created: 20240526144322
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_TopDamageLogs
@@ -6,23 +6,23 @@ type: text/vnd.tiddlywiki
 
 |thead-dark table-hover sortable w-75|k
 |Rank |Log | Total Dmg| Max Dmg| Min Dmg| Avg Dmg| Pulses|h
-|1 |[[[39 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296855]] | 479| 212| 73| 119.8| 4|
-|2 |[[[41 Earth Magus] Zloin o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/297044]] | 474| 211| 3| 19.0| 25|
-|3 |[[[40 Shadowmage] Psybr o==(=Mithril=Knights=- (Gnome)|https://www.durismud.com/pvp/logs/296968]] | 210| 210| 210| 210.0| 1|
-|4 |[[[35 Necrolyte] Knb o==(=Mithril=Knights=- (Githzerai)|https://www.durismud.com/pvp/logs/296710]] | 581| 199| 2| 96.8| 6|
-|5 |[[[35 Necrolyte] Knb o==(=Mithril=Knights=- (Githzerai)|https://www.durismud.com/pvp/logs/296683]] | 579| 199| 2| 115.8| 5|
-|6 |[[[42 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/297091]] | 209| 197| 12| 104.5| 2|
-|7 |[[[36 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296529]] | 606| 196| 57| 121.2| 5|
-|8 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296371]] | 365| 191| 71| 121.7| 3|
-|9 |[[[39 Shadowmage] Psybr o==(=Mithril=Knights=- (Gnome)|https://www.durismud.com/pvp/logs/296868]] | 190| 190| 190| 190.0| 1|
-|10 |[[[39 Elementalist] Liels *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/296982]] | 587| 178| 112| 146.8| 4|
-|11 |[[[33 Shadowmage] Guidrich o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/296094]] | 207| 177| 30| 103.5| 2|
-|12 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296358]] | 247| 175| 72| 123.5| 2|
-|13 |[[[34 Necrolyte] Knb o==(=Mithril=Knights=- (Githzerai)|https://www.durismud.com/pvp/logs/296654]] | 329| 173| 1| 82.2| 4|
-|14 |[[[40 Spiritualist] Col o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/296936]] | 173| 173| 173| 173.0| 1|
-|15 |[[[36 Shadowmage] Psybr o==(=Mithril=Knights=- (Gnome)|https://www.durismud.com/pvp/logs/296503]] | 169| 169| 169| 169.0| 1|
-|16 |[[[42 Earth Magus] Zloin o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/297068]] | 186| 166| 20| 93.0| 2|
-|17 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296244]] | 165| 165| 165| 165.0| 1|
-|18 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296218]] | 165| 165| 165| 165.0| 1|
-|19 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296191]] | 165| 165| 165| 165.0| 1|
-|20 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296163]] | 165| 165| 165| 165.0| 1|
+|1 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297128]] | 1782| 953| 47| 594.0| 3|
+|2 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297181]] | 1031| 782| 47| 257.8| 4|
+|3 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297168]] | 829| 782| 47| 414.5| 2|
+|4 |[[[37 Elementalist] Liels *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/296702]] | 685| 685| 685| 685.0| 1|
+|5 |[[[37 Elementalist] Liels *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/296728]] | 592| 592| 592| 592.0| 1|
+|6 |[[[43 Zealot] Zkr *-* Clan Ragnarok *-* (Goblin)|https://www.durismud.com/pvp/logs/297312]] | 754| 253| 10| 62.8| 12|
+|7 |[[[41 Demonic Rider] Kiria *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/297174]] | 228| 228| 228| 228.0| 1|
+|8 |[[[39 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296855]] | 479| 212| 73| 119.8| 4|
+|9 |[[[41 Earth Magus] Zloin o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/297044]] | 474| 211| 3| 19.0| 25|
+|10 |[[[40 Shadowmage] Psybr o==(=Mithril=Knights=- (Gnome)|https://www.durismud.com/pvp/logs/296968]] | 210| 210| 210| 210.0| 1|
+|11 |[[[41 Spiritualist] Esy *-* Clan Ragnarok *-* (Drow Elf)|https://www.durismud.com/pvp/logs/297207]] | 275| 202| 73| 137.5| 2|
+|12 |[[[35 Necrolyte] Knb o==(=Mithril=Knights=- (Githzerai)|https://www.durismud.com/pvp/logs/296710]] | 581| 199| 2| 96.8| 6|
+|13 |[[[35 Necrolyte] Knb o==(=Mithril=Knights=- (Githzerai)|https://www.durismud.com/pvp/logs/296683]] | 579| 199| 2| 115.8| 5|
+|14 |[[[42 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/297091]] | 209| 197| 12| 104.5| 2|
+|15 |[[[36 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296529]] | 606| 196| 57| 121.2| 5|
+|16 |[[[41 Assassin] Alfy *-* Clan Ragnarok *-* (Duergar)|https://www.durismud.com/pvp/logs/297125]] | 466| 192| 12| 42.4| 11|
+|17 |[[[34 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/296371]] | 365| 191| 71| 121.7| 3|
+|18 |[[[39 Shadowmage] Psybr o==(=Mithril=Knights=- (Gnome)|https://www.durismud.com/pvp/logs/296868]] | 190| 190| 190| 190.0| 1|
+|19 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297206]] | 581| 190| 12| 96.8| 6|
+|20 |[[[39 Assassin] Alfy *-* Clan Ragnarok *-* (Duergar)|https://www.durismud.com/pvp/logs/296917]] | 368| 185| 5| 122.7| 3|

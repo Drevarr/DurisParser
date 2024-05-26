@@ -1,4 +1,4 @@
-created: 20240524135516
+created: 20240526144322
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_DeathByRaceEvil_Data
@@ -20,7 +20,7 @@ type: text/vnd.tiddlywiki
             },
             series: [
                 {
-                data: [5, 30, 8, 16, 6, 6, 2, 2, 7, 4, 11, 23],
+                data: [5, 33, 9, 17, 6, 6, 2, 2, 7, 4, 11, 23],
                 type: 'bar'
                 }
             ]

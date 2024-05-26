@@ -11,9 +11,9 @@ listOfLogs = []
 # REGEX for parsing elements
 DmgLine = re.compile("\[Damage:\s+(\d+)\s+\]")
 PromptLine = re.compile("< (?P<Cur_HP>\d+)h/(\d+)H (\d+)v/(\d+)V Pos: (.*) >")
-RacesGood = re.compile("(a Human|a Barbarian|a Grey Elf|a Mountain Dwarf|a Halfling|a Gnome|a Centaur|a Githzerai|a Firbolg)")
-RacesNeutral = re.compile("(a Thri-Kreen|a Minotaur|a Shade|a ShadowBeast|a Vampire)")
-RacesEvil = re.compile("(an Orc|a Troll|a Drow Elf|a Duergar|a Goblin|a Kobold|an Ogre|a Githyanki|a Drider)")
+RacesGood = re.compile("(?:A|a|An|an) (Human|Barbarian|Grey Elf|Mountain Dwarf|Halfling|Gnome|Centaur|Githzerai|Firbolg)")
+RacesNeutral = re.compile("(?:A|a|An|an) (Thri-Kreen|Minotaur|Shade|ShadowBeast|Vampire)")
+RacesEvil = re.compile("(?:A|a|An|an) (Orc|Troll|Drow Elf|Duergar|Goblin|Kobold|Ogre|Githyanki|Drider)")
 
 # URL for fetching LogNumber
 URL = 'https://www.durismud.com/pvp/logs/'

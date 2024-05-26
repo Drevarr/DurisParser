@@ -1,4 +1,4 @@
-created: 20240524135516
+created: 20240526144322
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_EvilDeathsByName_Data
@@ -17,7 +17,9 @@ option = {
     ['Omm', 3],
     ['Zhad', 3],
     ['Kru', 3],
+    ['Gukk', 3],
     ['Zoku', 3],
+    ['Thugan', 3],
     ['Keebler', 3],
     ['Lodik', 3],
     ['Mori', 3],
@@ -30,9 +32,7 @@ option = {
     ['Krey', 2],
     ['Zhadrak', 2],
     ['Tag', 2],
-    ['Gukk', 2],
     ['Moogrok', 2],
-    ['Feskarmann', 2],
 
     ]
   },
@@ -46,6 +46,7 @@ option = {
     type: 'category',
     inverse: true
     },
+  dataZoom: [{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75},{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}],    
   visualMap: {
     orient: 'horizontal',
     left: 'center',
