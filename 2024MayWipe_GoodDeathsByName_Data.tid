@@ -1,4 +1,4 @@
-created: 20240526144322
+created: 20240527104004
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_GoodDeathsByName_Data
@@ -8,14 +8,16 @@ option = {
     dataset: {
     source: [
     ['Name', 'Deaths'],
+    ['Dze', 5],
     ['Col', 4],
-    ['Dze', 4],
     ['Naj', 4],
     ['Zloin', 3],
     ['Grimsorc', 2],
     ['Ruben', 2],
     ['Kale', 2],
     ['Mat', 2],
+    ['Fuego', 2],
+    ['Jethrus', 2],
     ['Iblis', 1],
     ['Chaosgod', 1],
     ['Drozk', 1],
@@ -31,8 +33,6 @@ option = {
     ['Matak', 1],
     ['Vren', 1],
     ['Nom', 1],
-    ['Zlo', 1],
-    ['Morrigu', 1],
 
     ]
   },
@@ -51,7 +51,7 @@ option = {
     orient: 'horizontal',
     left: 'center',
     min: 1,
-    max: 4,
+    max: 5,
     //inverse: true,
     text: ['High Score', 'Low Score'],
     // Map the score column to color

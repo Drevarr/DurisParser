@@ -235,6 +235,14 @@ for spec in PlayerClassDamage:
 
 sorted_PlayerClassMaxDamage = sorted(PlayerClassMaxDamage.items(), key=lambda x: x[1], reverse = True)
 
+AvgDeathLevel = {}
+for row in DurisData:
+    DeathDate = row[1]
+    DeathSide = row[6]
+    DeathLevel = int(row[7])
+    if DeathDate not in AvgDeathLevel:
+        AvgDeathLevel[DeathDate] = []
+    AvgDeathLevel[DeathDate].append(DeathLevel)
 
 
 #write echarts .tid file with chart data
@@ -248,7 +256,8 @@ ChartList =[
     '2024MayWipe_TotalDamage_Data',
     '2024MayWipe_EvilDeathsByName_Data',
     '2024MayWipe_GoodDeathsByName_Data',
-    '2024MayWipe_PlayerClassMaxDamage_Data'
+    '2024MayWipe_PlayerClassMaxDamage_Data',
+    '2024MayWipe_DeathLevels_Data'
     ]
 
 for item in ChartList:
@@ -738,7 +747,7 @@ dataset: [
       fromTransformResult: 1
     }}
   ],
-  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}}],
+  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 33}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}}],
   tooltip: {{trigger: 'item', axisPointer: {{type: 'shadow'}}}},
   grid: {{left: '10%', right: '10%', bottom: '15%'}},
   yAxis: {{type: 'category', boundaryGap: true, nameGap: 30, splitArea: {{show: true}}, splitLine: {{show: true}},inverse: true}},
@@ -767,5 +776,115 @@ dataset: [
 """
 
             f.write(print_String)
+            f.close()
+
+        if item == '2024MayWipe_DeathLevels_Data':
+            print_String = f"\nconst deathDates = {DeathDates}"
+
+            f.write(print_String)
+            print_String = f"""
+option = {{
+  title: [
+    {{
+      text: 'Death Level by Day',
+      left: 'center'
+    }},
+    {{
+      text: 'upper: Q3 + 1.5 * IQR \\nlower: Q1 - 1.5 * IQR',
+      borderColor: '#999',
+      borderWidth: 1,
+      textStyle: {{
+        fontWeight: 'normal',
+        fontSize: 9,
+        lineHeight: 10
+      }},
+      left: '10%',
+      top: '89%'
+    }}
+  ],
+  dataset: [
+    {{
+      // prettier-ignore
+      source: ["""
+            
+            f.write(print_String)
+
+            for item in AvgDeathLevel:
+                f.write(f"{AvgDeathLevel[item]},\n")
+                        
+            print_String = f"""
+            ]
+    }},
+    {{
+      transform: {{
+        type: 'boxplot',
+        config: {{
+          itemNameFormatter: function (params) {{
+            return deathDates[params.value];
+          }}
+        }}
+      }}
+    }},
+    {{
+      fromDatasetIndex: 1,
+      fromTransformResult: 1
+    }}
+  ],
+  tooltip: {{
+    trigger: 'item',
+    axisPointer: {{
+      type: 'shadow'
+    }}
+  }},
+  grid: {{
+    left: '10%',
+    right: '10%',
+    bottom: '15%'
+  }},
+  xAxis: {{
+    type: 'category',
+    boundaryGap: true,
+    nameGap: 30,
+    splitArea: {{
+      show: false
+    }},
+    splitLine: {{
+      show: false
+    }}
+  }},
+  yAxis: {{
+    type: 'value',
+    name: 'Level',
+    splitArea: {{
+      show: true
+    }}
+  }},
+  dataZoom: [
+  {{
+    type: 'inside'
+  }},
+  {{
+    type: 'slider',
+    height: 20
+  }}
+],
+  series: [
+    {{
+      name: 'Death Level',
+      type: 'boxplot',
+      datasetIndex: 1,
+      encode:{{tooltip: [ 1, 2, 3, 4, 5]}},
+    }},
+    {{
+      name: 'outlier',
+      type: 'scatter',
+      datasetIndex: 2
+    }}
+  ]
+}};
+"""
+
+            f.write(print_String)
+
             f.close()
 

@@ -1,4 +1,4 @@
-created: 20240526144322
+created: 20240527104004
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_EvilDeathsByName_Data
@@ -8,18 +8,18 @@ option = {
     dataset: {
     source: [
     ['Name', 'Deaths'],
-    ['Ra', 8],
+    ['Ra', 9],
+    ['Cynee', 5],
     ['Kymaz', 4],
     ['Sha', 4],
     ['Liels', 4],
-    ['Cynee', 4],
+    ['Gukk', 4],
+    ['Thugan', 4],
     ['Toki', 4],
     ['Omm', 3],
     ['Zhad', 3],
     ['Kru', 3],
-    ['Gukk', 3],
     ['Zoku', 3],
-    ['Thugan', 3],
     ['Keebler', 3],
     ['Lodik', 3],
     ['Mori', 3],
@@ -51,7 +51,7 @@ option = {
     orient: 'horizontal',
     left: 'center',
     min: 1,
-    max: 8,
+    max: 9,
     //inverse: true,
     text: ['High Score', 'Low Score'],
     // Map the score column to color
