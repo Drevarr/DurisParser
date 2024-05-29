@@ -55,37 +55,39 @@ def Parse_Page(number, pages):
                 Date = col[0].text.split()[0]
                 Time = col[0].text.split()[1]
                 Location = col[1].text.strip()
+                RaceWar_Side = ""
                 #Process the Good Group subtable to capture each row Data
                 Good_Group = []
                 Good_Group_Logs = []
                 Good_Group_Count = 0
                 Good_Frag = ""
                 Good_Tds = col[2].findAll("td", class_="nowrap")
-                for Good_Td in Good_Tds:
-                    Good_Group_Count += 1
-                    Good_Group.append(Good_Td.text.strip())
-                    FightLink = Good_Td.find(href=True)
-                    link = FightLink['href']
-                    r = q.match(link)
-                    POV_Log_Number = r[1]
-                    Good_Group_Logs.append(POV_Log_Number)
-                    if Good_Td.find("span", class_="blood"):
-                        RaceWar_Side = "Goodies"
-                        Good_Frag = Good_Td.text.strip()
-                        m = p.match(Good_Frag)
-                        FragDict = m.groupdict()
-                        Frag_Level = FragDict['PC_LEVEL']
-                        Frag_Class = FragDict['PC_CLASS']
-                        Frag_Name = FragDict['PC_NAME']
-                        Frag_Guild = FragDict['PC_GUILD']
-                        Frag_Race = FragDict['PC_RACE']
-                        #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
-                        #FragLink = Good_Td.find(href=True)
-                        #link = FragLink['href']
-                        #r = q.match(link)
-                        Log_Number = POV_Log_Number
-                        if int(Log_Number) <= Latest_Log:
-                            return
+                if Good_Tds:
+                    for Good_Td in Good_Tds:
+                        Good_Group_Count += 1
+                        Good_Group.append(Good_Td.text.strip())
+                        FightLink = Good_Td.find(href=True)
+                        link = FightLink['href']
+                        r = q.match(link)
+                        POV_Log_Number = r[1]
+                        Good_Group_Logs.append(POV_Log_Number)
+                        if Good_Td.find("span", class_="blood"):
+                            RaceWar_Side = "Goodies"
+                            Good_Frag = Good_Td.text.strip()
+                            m = p.match(Good_Frag)
+                            FragDict = m.groupdict()
+                            Frag_Level = FragDict['PC_LEVEL']
+                            Frag_Class = FragDict['PC_CLASS']
+                            Frag_Name = FragDict['PC_NAME']
+                            Frag_Guild = FragDict['PC_GUILD']
+                            Frag_Race = FragDict['PC_RACE']
+                            #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
+                            #FragLink = Good_Td.find(href=True)
+                            #link = FragLink['href']
+                            #r = q.match(link)
+                            Log_Number = POV_Log_Number
+                            if int(Log_Number) <= Latest_Log:
+                                return
 
                 #Process the Evils Group subtable to capture each row Data
                 Evil_Group = []
@@ -93,63 +95,65 @@ def Parse_Page(number, pages):
                 Evil_Group_Count = 0
                 Evil_Frag = ""
                 Evil_Tds = col[3].findAll("td", class_="nowrap")
-                for Evil_Td in Evil_Tds:
-                    Evil_Group_Count += 1
-                    Evil_Group.append(Evil_Td.text.strip())
-                    FightLink = Evil_Td.find(href=True)
-                    link = FightLink['href']
-                    r = q.match(link)
-                    POV_Log_Number = r[1]
-                    Evil_Group_Logs.append(POV_Log_Number)
-                    if Evil_Td.find("span", class_="blood"):
-                        RaceWar_Side = "Evils"
-                        Evil_Frag = Evil_Td.text.strip()
-                        m = p.match(Evil_Frag)
-                        FragDict = m.groupdict()
-                        Frag_Level = FragDict['PC_LEVEL']
-                        Frag_Class = FragDict['PC_CLASS']
-                        Frag_Name = FragDict['PC_NAME']
-                        Frag_Guild = FragDict['PC_GUILD']
-                        Frag_Race = FragDict['PC_RACE']
-                        #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
-                        #FragLink = Good_Td.find(href=True)
-                        #link = FragLink['href']
-                        #r = q.match(link)
-                        Log_Number = POV_Log_Number
-                        if int(Log_Number) <= Latest_Log:
-                            return
+                if Evil_Tds:
+                    for Evil_Td in Evil_Tds:
+                        Evil_Group_Count += 1
+                        Evil_Group.append(Evil_Td.text.strip())
+                        FightLink = Evil_Td.find(href=True)
+                        link = FightLink['href']
+                        r = q.match(link)
+                        POV_Log_Number = r[1]
+                        Evil_Group_Logs.append(POV_Log_Number)
+                        if Evil_Td.find("span", class_="blood"):
+                            RaceWar_Side = "Evils"
+                            Evil_Frag = Evil_Td.text.strip()
+                            m = p.match(Evil_Frag)
+                            FragDict = m.groupdict()
+                            Frag_Level = FragDict['PC_LEVEL']
+                            Frag_Class = FragDict['PC_CLASS']
+                            Frag_Name = FragDict['PC_NAME']
+                            Frag_Guild = FragDict['PC_GUILD']
+                            Frag_Race = FragDict['PC_RACE']
+                            #q = re.compile(r'\/pvp\/logs\/(?P<Log_Number>\d*)')
+                            #FragLink = Good_Td.find(href=True)
+                            #link = FragLink['href']
+                            #r = q.match(link)
+                            Log_Number = POV_Log_Number
+                            if int(Log_Number) <= Latest_Log:
+                                return
 
                 # test print the info
                 #print_string = (Date+', '+Location+', '+str(Good_Group_Count)+', '+str(Evil_Group_Count)+', '+RaceWar_Side+', '+Frag_Level+', '+Frag_Class+', '+Frag_Name+', '+Frag_Guild+', '+Frag_Race+', '+Log_Number)
                 #print (print_string)
                 
-                # write a row to the csv file
-                writer.writerow([Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Log_Number, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs)])
-                
-                # Set LogData for insertion into sqlite3 db
-                LogData = (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs))
-                print("(Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Evil_Group))")
-                print(LogData)
-                #insert the new data if not already in table based on Log_Number
-                #sql_insert(con, LogData)
-                print(str(Good_Group_Logs))
-                print(type(Good_Group_Logs))
-                print(str(Evil_Group_Logs))
-                print(type(Evil_Group_Logs))
-
-                for log in Good_Group_Logs:
-                    entry=str(log)
-                    cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
-                for log in Evil_Group_Logs:
-                    entry=str(log)
-                    cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
+                if RaceWar_Side:
+                    # write a row to the csv file
+                    writer.writerow([Date, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Log_Number, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs)])
                     
-                # Insert the PVP data into the table
-                cursor.execute('INSERT OR IGNORE INTO Fight_Logs (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                        LogData)
-                 
-                #commit new data
-                #con.commit()
+                    # Set LogData for insertion into sqlite3 db
+                    LogData = (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Good_Group_Logs), str(Evil_Group), str(Evil_Group_Logs))
+                    print("(Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, str(Good_Group), str(Evil_Group))")
+                    print(LogData)
+                    #insert the new data if not already in table based on Log_Number
+                    #sql_insert(con, LogData)
+                    print(str(Good_Group_Logs))
+                    print(type(Good_Group_Logs))
+                    print(str(Evil_Group_Logs))
+                    print(type(Evil_Group_Logs))
+
+                    for log in Good_Group_Logs:
+                        entry=str(log)
+                        cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
+                    for log in Evil_Group_Logs:
+                        entry=str(log)
+                        cursor.execute('INSERT OR IGNORE INTO Logs (Log_Number) VALUES (?)', [entry])
+                        
+                    # Insert the PVP data into the table
+                    cursor.execute('INSERT OR IGNORE INTO Fight_Logs (Log_Number, Date, Time, Location, Good_Group_Count, Evil_Group_Count, RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            LogData)
+                    
+                    #commit new data
+                    #con.commit()
 
 # Connect to the database
 conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')

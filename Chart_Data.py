@@ -235,6 +235,7 @@ for spec in PlayerClassDamage:
 
 sorted_PlayerClassMaxDamage = sorted(PlayerClassMaxDamage.items(), key=lambda x: x[1], reverse = True)
 
+#Collect Death Level Data for BoxPlot chart
 AvgDeathLevel = {}
 for row in DurisData:
     DeathDate = row[1]
@@ -244,6 +245,9 @@ for row in DurisData:
         AvgDeathLevel[DeathDate] = []
     AvgDeathLevel[DeathDate].append(DeathLevel)
 
+print("Avg Death Level Data")
+for item in DeathDates:
+    print(item, AvgDeathLevel[item])
 
 #write echarts .tid file with chart data
 ChartList =[
@@ -809,7 +813,7 @@ option = {{
             
             f.write(print_String)
 
-            for item in AvgDeathLevel:
+            for item in DeathDates:
                 f.write(f"{AvgDeathLevel[item]},\n")
                         
             print_String = f"""
