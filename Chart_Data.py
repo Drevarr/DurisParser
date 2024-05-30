@@ -355,6 +355,12 @@ type: text/vnd.tiddlywiki
             }},
             xAxis: {{
                 type: 'category',
+                axisTick: {{
+                  alignWithLabel: true
+                }},
+                axisLabel: {{
+                  rotate: 30
+                }},
                 data: {list(GoodRaces)}
             }},
             yAxis: {{
@@ -381,6 +387,12 @@ type: text/vnd.tiddlywiki
             }},
             xAxis: {{
                 type: 'category',
+                axisTick: {{
+                  alignWithLabel: true
+                }},
+                axisLabel: {{
+                  rotate: 30
+                }},                
                 data: {list(EvilRaces)}
             }},
             yAxis: {{

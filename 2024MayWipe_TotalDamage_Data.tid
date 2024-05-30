@@ -1,4 +1,4 @@
-created: 20240528203848
+created: 20240530001833
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_TotalDamage_Data
@@ -8,7 +8,6 @@ type: text/vnd.tiddlywiki
         dataset: [{
             source: [
 ['Name+Log', 'Total Damage', 'Max Damage', 'Avg Damage', 'Total Pulses'],
-['[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)-Log:297021',418,160,104.5,4],
 ['[40 Shock Reaver] Kungen *-* Clan Ragnarok *-* (Drow Elf)-Log:297851',420,341,105.0,4],
 ['[43 Demonic Rider] Kiria *-* Clan Ragnarok *-* (Githyanki)-Log:297836',422,389,140.7,3],
 ['[43 Demonic Rider] Kiria *-* Clan Ragnarok *-* (Githyanki)-Log:297850',422,389,140.7,3],
@@ -90,6 +89,7 @@ type: text/vnd.tiddlywiki
 ['[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)-Log:297168',829,782,414.5,2],
 ['[41 Brigand] Myrk *-* Clan Ragnarok *-* (Duergar)-Log:297315',830,96,48.8,17],
 ['[43 Demonic Rider] Kiria *-* Clan Ragnarok *-* (Githyanki)-Log:297930',857,457,214.2,4],
+['[42 Thief] Drip o==(=Mithril=Knights=- (Vampire)-Log:298126',862,156,95.8,9],
 ['[42 Pyrokinetic] Torpsi ~<=Shadow Knights=>~ (Githzerai)-Log:297617',868,138,108.5,8],
 ['[44 Disharmonist] Gnomad o==(=Mithril=Knights=- (Gnome)-Log:297938',874,362,291.3,3],
 ['[43 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)-Log:297808',900,467,450.0,2],

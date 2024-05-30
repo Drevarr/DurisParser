@@ -1,4 +1,4 @@
-created: 20240528203848
+created: 20240530001833
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_EvilDeathsByName_Data
@@ -23,6 +23,7 @@ option = {
     ['Moogrok', 3],
     ['Esy', 3],
     ['Keebler', 3],
+    ['Rotk', 3],
     ['Lodik', 3],
     ['Mori', 3],
     ['Yzarafk', 3],
@@ -32,7 +33,6 @@ option = {
     ['Choron', 2],
     ['Jixan', 2],
     ['Krey', 2],
-    ['Zhadrak', 2],
 
     ]
   },

@@ -1,4 +1,4 @@
-created: 20240528203848
+created: 20240530001833
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_GroupSize_Data
@@ -82,6 +82,8 @@ type: text/vnd.tiddlywiki
                 ['05/27/24', 1, 1.00, 1.00],
                 
                 ['05/28/24', 18, 11.72, 7.00],
+                
+                ['05/29/24', 6, 2.17, 2.50],
                 
             ]
             },

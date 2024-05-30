@@ -1,4 +1,4 @@
-created: 20240528203848
+created: 20240530001833
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_GoodDeathsByName_Data
@@ -19,6 +19,7 @@ option = {
     ['Mat', 2],
     ['Fuego', 2],
     ['Jethrus', 2],
+    ['Laz', 2],
     ['Iblis', 1],
     ['Chaosgod', 1],
     ['Drozk', 1],
@@ -32,7 +33,6 @@ option = {
     ['Loht', 1],
     ['Shiv', 1],
     ['Matak', 1],
-    ['Vren', 1],
 
     ]
   },
