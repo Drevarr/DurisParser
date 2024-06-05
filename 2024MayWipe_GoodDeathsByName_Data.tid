@@ -1,4 +1,4 @@
-created: 20240530001833
+created: 20240605084630
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_GoodDeathsByName_Data
@@ -7,32 +7,32 @@ type: text/vnd.tiddlywiki
 option = {
     dataset: {
     source: [
-    ['Name', 'Deaths'],
-    ['Dze', 5],
-    ['Col', 4],
-    ['Naj', 4],
-    ['Zloin', 3],
-    ['Grimsorc', 2],
-    ['Ruben', 2],
-    ['Nom', 2],
-    ['Kale', 2],
-    ['Mat', 2],
-    ['Fuego', 2],
-    ['Jethrus', 2],
-    ['Laz', 2],
-    ['Iblis', 1],
-    ['Chaosgod', 1],
-    ['Drozk', 1],
-    ['Matik', 1],
-    ['Rodo', 1],
-    ['Goonda', 1],
-    ['Duac', 1],
-    ['Erisi', 1],
-    ['Yustro', 1],
-    ['Matikai', 1],
-    ['Loht', 1],
-    ['Shiv', 1],
-    ['Matak', 1],
+    ['Name', 'Deaths', 'No Deaths'],
+    ['Dze', 6, 57],
+    ['Col', 5, 71],
+    ['Naj', 4, 51],
+    ['Grimsorc', 3, 0],
+    ['Zloin', 3, 28],
+    ['Jethrus', 3, 36],
+    ['Ruben', 2, 0],
+    ['Nom', 2, 21],
+    ['Zar', 2, 15],
+    ['Kale', 2, 0],
+    ['Mat', 2, 0],
+    ['Grahk', 2, 0],
+    ['Grimeare', 2, 1],
+    ['Fuego', 2, 4],
+    ['Laz', 2, 29],
+    ['Tobe', 2, 2],
+    ['Iblis', 1, 0],
+    ['Chaosgod', 1, 0],
+    ['Drozk', 1, 0],
+    ['Matik', 1, 2],
+    ['Rodo', 1, 15],
+    ['Goonda', 1, 10],
+    ['Duac', 1, 0],
+    ['Erisi', 1, 0],
+    ['Yustro', 1, 9],
 
     ]
   },
@@ -41,34 +41,16 @@ option = {
     text: 'Player Deaths - Goods',
     subtext: '          Top 25 Player Deaths - Goods'
   },
+  legend: {},
+  tooltip: {
+      trigger: 'axis',
+      showContent: true
+    },
   xAxis: { name: 'Deaths' },
   yAxis: {
     type: 'category',
     inverse: true
     },
   dataZoom: [{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75},{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}],
-  visualMap: {
-    orient: 'horizontal',
-    left: 'center',
-    min: 1,
-    max: 5,
-    //inverse: true,
-    text: ['High Score', 'Low Score'],
-    // Map the score column to color
-    dimension: 1,
-    inRange: {
-      color: ['#65B581', '#FFCE34', '#FD665F']
-    }
-  },
-  series: [
-    {
-      type: 'bar',
-      encode: {
-        // Map the "amount" column to X axis.
-        x: 'Deaths',
-        // Map the "product" column to Y axis
-        y: 'Name'
-      }
-    }
-  ]
+  series: [{ type: 'bar', stack: 'Logs'}, { type: 'bar', stack: 'Logs' }]
 };

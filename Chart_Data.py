@@ -7,6 +7,9 @@ from datetime import datetime
 #LogNames dictionary of log Numbers as key and POV Name as value
 LogNames={}
 
+#NameCounts dictionary of POV Names as key and total number of fights
+NameCounts = {}
+
 # Connect to the database
 conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')
 cursor = conn.cursor()
@@ -56,7 +59,7 @@ cursor.execute('''
 
 DurisData = cursor.fetchall()
 
-
+playerNameRegex = re.compile(r'\] (\w+) ')
 #Gather Logs with POV Name
 for row in DurisData:
     goodKeys = ast.literal_eval(row[13])
@@ -65,9 +68,22 @@ for row in DurisData:
     evilValues = ast.literal_eval(row[14])
     for i, key in enumerate(goodKeys):
         LogNames[key] = goodValues[i]
+        pn = playerNameRegex.search(goodValues[i]) 
+        playerName = pn.group(1)
+        if playerName not in NameCounts:
+            NameCounts[playerName] = 1
+        else:
+            NameCounts[playerName] += 1
+
     for i, key in enumerate(evilKeys):
         LogNames[key] = evilValues[i]
-        
+        pn = playerNameRegex.search(evilValues[i]) 
+        playerName = pn.group(1)
+        if playerName not in NameCounts:
+            NameCounts[playerName] = 1
+        else:
+            NameCounts[playerName] += 1
+
 print(DailyDeathByRacewarSides)
 print("\n")
 print(RaceDeathsbySide)
@@ -603,21 +619,20 @@ type: text/vnd.tiddlywiki
 
         if item == '2024MayWipe_EvilDeathsByName_Data':
             sorted_dict = sorted(NamedDeaths['Evils'].items(), key=lambda x: x[1], reverse = True)
-            VisualMapMax = 0
             print_String = f"""
 option = {{
     dataset: {{
     source: [
-    ['Name', 'Deaths'],
+    ['Name', 'Deaths', 'No Deaths'],
 """
             f.write(print_String)
 
             for i in range(25):
-                print_String = f"    ['{list(sorted_dict[i])[0]}', {list(sorted_dict[i])[1]}],\n"
+                pName=list(sorted_dict[i])[0]
+                numDeaths = list(sorted_dict[i])[1]
+                nonDeaths = NameCounts[pName] - numDeaths
+                print_String = f"    ['{pName}', {numDeaths}, {nonDeaths}],\n"
                 f.write(print_String)
-                if sorted_dict[i][1] > VisualMapMax:
-                    VisualMapMax = sorted_dict[i][1]
-
             print_String = f"""
     ]
   }},
@@ -626,57 +641,38 @@ option = {{
     text: 'Player Deaths - Evils',
     subtext: '          Top 25 Player Deaths - Evils'
   }},
-  xAxis: {{ name: 'Deaths' }},
+  legend: {{}},
+  tooltip: {{
+      trigger: 'axis',
+      showContent: true
+    }},
+  xAxis: {{}},
   yAxis: {{
     type: 'category',
     inverse: true
     }},
   dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}}],    
-  visualMap: {{
-    orient: 'horizontal',
-    left: 'center',
-    min: 1,
-    max: {VisualMapMax},
-    //inverse: true,
-    text: ['High Score', 'Low Score'],
-    // Map the score column to color
-    dimension: 1,
-    inRange: {{
-      color: ['#65B581', '#FFCE34', '#FD665F']
-    }}
-  }},
-  series: [
-    {{
-      type: 'bar',
-      encode: {{
-        // Map the "amount" column to X axis.
-        x: 'Deaths',
-        // Map the "product" column to Y axis
-        y: 'Name'
-      }}
-    }}
-  ]
+  series: [{{ type: 'bar', stack: 'Logs'}}, {{ type: 'bar', stack: 'Logs' }}]
 }};"""
             f.write(print_String)
             f.close()
 
         if item == '2024MayWipe_GoodDeathsByName_Data':
             sorted_dict = sorted(NamedDeaths['Goods'].items(), key=lambda x: x[1], reverse = True)
-            VisualMapMax = 0
             print_String = f"""
 option = {{
     dataset: {{
     source: [
-    ['Name', 'Deaths'],
+    ['Name', 'Deaths', 'No Deaths'],
 """
             f.write(print_String)
 
             for i in range(25):
-                print_String = f"    ['{list(sorted_dict[i])[0]}', {list(sorted_dict[i])[1]}],\n"
+                pName=list(sorted_dict[i])[0]
+                numDeaths = list(sorted_dict[i])[1]
+                nonDeaths = NameCounts[pName] - numDeaths
+                print_String = f"    ['{pName}', {numDeaths}, {nonDeaths}],\n"
                 f.write(print_String)
-                if sorted_dict[i][1] > VisualMapMax:
-                    VisualMapMax = sorted_dict[i][1]
-
             print_String = f"""
     ]
   }},
@@ -685,36 +681,18 @@ option = {{
     text: 'Player Deaths - Goods',
     subtext: '          Top 25 Player Deaths - Goods'
   }},
+  legend: {{}},
+  tooltip: {{
+      trigger: 'axis',
+      showContent: true
+    }},
   xAxis: {{ name: 'Deaths' }},
   yAxis: {{
     type: 'category',
     inverse: true
     }},
   dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 75}}],
-  visualMap: {{
-    orient: 'horizontal',
-    left: 'center',
-    min: 1,
-    max: {VisualMapMax},
-    //inverse: true,
-    text: ['High Score', 'Low Score'],
-    // Map the score column to color
-    dimension: 1,
-    inRange: {{
-      color: ['#65B581', '#FFCE34', '#FD665F']
-    }}
-  }},
-  series: [
-    {{
-      type: 'bar',
-      encode: {{
-        // Map the "amount" column to X axis.
-        x: 'Deaths',
-        // Map the "product" column to Y axis
-        y: 'Name'
-      }}
-    }}
-  ]
+  series: [{{ type: 'bar', stack: 'Logs'}}, {{ type: 'bar', stack: 'Logs' }}]
 }};"""
             f.write(print_String)
             f.close()
