@@ -1,4 +1,4 @@
-created: 20240605084630
+created: 20240725105122
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_DeathByRaceGood_Data
@@ -19,14 +19,14 @@ type: text/vnd.tiddlywiki
                 axisLabel: {
                   rotate: 30
                 },
-                data: ['Barbarian', 'Centaur', 'Dwarf', 'Firbolg', 'Githzerai', 'Gnome', 'Grey Elf', 'Halfling', 'Human', 'Shade', 'ShadowBeast', 'Thri-Kreen', 'Vampire']
+                data: ['Barbarian', 'Centaur', 'Dwarf', 'Firbolg', 'Githzerai', 'Gnome', 'Grey Elf', 'Halfling', 'Human', 'Minotaur', 'Shade', 'ShadowBeast', 'Thri-Kreen', 'Vampire']
             },
             yAxis: {
                 type: 'value'
             },
             series: [
                 {
-                data: [6, 4, 2, 1, 21, 2, 15, 6, 5, 5, 1, 1, 25],
+                data: [14, 12, 12, 1, 50, 8, 31, 14, 24, 1, 11, 1, 2, 36],
                 type: 'bar'
                 }
             ]

@@ -1,4 +1,4 @@
-created: 20240605084630
+created: 20240725105122
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_EvilDeathsByName_Data
@@ -8,31 +8,31 @@ option = {
     dataset: {
     source: [
     ['Name', 'Deaths', 'No Deaths'],
-    ['Ra', 10, 43],
-    ['Sha', 6, 13],
-    ['Omm', 5, 46],
-    ['Thugan', 5, 24],
-    ['Cynee', 5, 1],
+    ['Ra', 17, 106],
+    ['Cynee', 8, 1],
+    ['Omm', 7, 76],
+    ['Choron', 7, 14],
+    ['Rotk', 7, 0],
+    ['Sha', 6, 24],
+    ['Keebler', 6, 9],
+    ['Zluag', 6, 2],
+    ['Chilidus', 6, 1],
+    ['Gukk', 5, 29],
+    ['Thugan', 5, 44],
     ['Toki', 5, 0],
+    ['Lodik', 5, 3],
+    ['Yzarafk', 5, 0],
+    ['Zkr', 5, 17],
     ['Kymaz', 4, 0],
     ['Liels', 4, 25],
+    ['Zhad', 4, 3],
     ['Kru', 4, 6],
-    ['Gukk', 4, 28],
     ['Moogrok', 4, 1],
-    ['Lodik', 4, 1],
-    ['Choron', 3, 12],
-    ['Zhad', 3, 1],
-    ['Zoku', 3, 3],
-    ['Esy', 3, 31],
-    ['Keebler', 3, 9],
-    ['Rotk', 3, 0],
-    ['Mori', 3, 1],
-    ['Yzarafk', 3, 0],
-    ['Zluag', 3, 0],
-    ['Yzar', 2, 0],
-    ['Kymax', 2, 2],
-    ['Pohet', 2, 0],
-    ['Jixan', 2, 1],
+    ['Feskarmann', 4, 0],
+    ['Mori', 4, 1],
+    ['Lom', 4, 13],
+    ['Nobodyonderp', 4, 0],
+    ['Pohet', 3, 14],
 
     ]
   },

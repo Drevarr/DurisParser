@@ -79,7 +79,7 @@ with open("PVP_Logs.csv", "w", newline='') as f:
                     pulseDamageList.append(pulseDamage)
                     pulseDamage = 0
                     
-        #Add final round damage when log endds without prompt
+        #Add final round damage when log ends without prompt
         if pulseDamage:
             pulseDamageList.append(pulseDamage)
 

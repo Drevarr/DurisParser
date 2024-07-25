@@ -277,7 +277,8 @@ ChartList =[
     '2024MayWipe_EvilDeathsByName_Data',
     '2024MayWipe_GoodDeathsByName_Data',
     '2024MayWipe_PlayerClassMaxDamage_Data',
-    '2024MayWipe_DeathLevels_Data'
+    '2024MayWipe_DeathLevels_Data',
+    '2024MayWipe_FightsVersusDeaths_Data'
     ]
 
 for item in ChartList:
@@ -741,7 +742,7 @@ dataset: [
       fromTransformResult: 1
     }}
   ],
-  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 33}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 40}}],
+  dataZoom: [{{id: 'dataZoomY', type: 'slider', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 25}},{{id: 'dataZoomY2', type: 'inside', yAxisIndex: [0], filterMode: 'filter', start: 0, end: 25}}],
   tooltip: {{trigger: 'item', axisPointer: {{type: 'shadow'}}}},
   grid: {{left: '10%', right: '10%', bottom: '15%'}},
   yAxis: {{type: 'category', boundaryGap: true, nameGap: 30, splitArea: {{show: true}}, splitLine: {{show: true}},inverse: true}},
@@ -882,3 +883,80 @@ option = {{
 
             f.close()
 
+        if item == '2024MayWipe_FightsVersusDeaths_Data':
+            sorted_Goods_dict = sorted(NamedDeaths['Goods'].items(), key=lambda x: x[1], reverse = True)
+            sorted_Evils_dict = sorted(NamedDeaths['Evils'].items(), key=lambda x: x[1], reverse = True)
+            print_String = f"""
+SideColor = {{'Goods':'ForestGreen', 'Evils':'DodgerBlue'}};
+
+option = {{
+    dataset: {{
+    source: [
+    ['Name', 'Fights', 'Deaths', 'Side'],
+"""
+            f.write(print_String)
+
+            for pName in NameCounts:
+                Fight_Count = NameCounts[pName]
+                if pName in NamedDeaths['Goods']:
+                    Death_Count = NamedDeaths['Goods'][pName]
+                    raceWareSide = 'Goods'
+                elif pName in NamedDeaths['Evils']:
+                    Death_Count = NamedDeaths['Evils'][pName]
+                    raceWareSide = 'Evils'
+                else:
+                    Death_Count = 0
+                print_String = f"    ['{pName}', {Fight_Count}, {Death_Count}, '{raceWareSide}'],\n"
+                f.write(print_String)
+
+            print_String = f"""
+    ]
+  }},
+  grid: {{ 
+    containLabel: true,
+    grid: '5px' 
+    }},
+  title: {{
+    text: 'Fights verus Deaths - Bubble Chart',
+    subtext: '          Bubble size based on fight/death ratio'
+  }},
+  legend: {{}},
+  tooltip: {{
+      trigger: 'axis',
+    axisPointer: {{
+      type: 'cross'
+    }}
+  }},
+  xAxis: {{ name: 'Fights' }},
+  yAxis: {{
+    type: 'value',
+    name: 'Deaths',
+    min: -1,
+    nameLocation: 'center',
+	  nameGap: 45,
+    }},
+  series: [
+    {{
+      type: 'scatter',
+      symbolSize: function (data) {{
+        return ((data[1]/(data[2]+1))*1.25);
+      }},
+      itemStyle: {{
+        color: function(seriesIndex) {{
+        	if (seriesIndex.data[3]){{
+        	  return SideColor[seriesIndex.data[3]];
+        	}}
+        }}
+      }},
+      encode: {{
+        // Map the "amount" column to X axis.
+        x: 'Fights',
+        // Map the "product" column to Y axis
+        y: 'Deaths',
+        tooltip: [0, 1, 2, 3]
+      }}
+    }}
+  ]
+}};"""
+            f.write(print_String)
+            f.close()
