@@ -1,4 +1,4 @@
-created: 20240725105122
+created: 20240801092427
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_GoodDeathsByName_Data
@@ -8,31 +8,31 @@ option = {
     dataset: {
     source: [
     ['Name', 'Deaths', 'No Deaths'],
-    ['Col', 9, 102],
+    ['Col', 9, 103],
     ['Dze', 7, 62],
-    ['Naj', 5, 72],
-    ['Jethrus', 5, 45],
+    ['Jethrus', 6, 50],
+    ['Naj', 5, 81],
+    ['Fosters', 5, 0],
     ['Brenne', 4, 13],
     ['Aspy', 4, 0],
+    ['Elak', 4, 0],
     ['Grimsorc', 3, 0],
     ['Yustro', 3, 15],
     ['Nom', 3, 31],
-    ['Jai', 3, 11],
-    ['Zloin', 3, 46],
-    ['Grahk', 3, 6],
+    ['Jai', 3, 20],
+    ['Zloin', 3, 48],
+    ['Grahk', 3, 7],
     ['Helvi', 3, 4],
     ['Bis', 3, 10],
-    ['Laz', 3, 44],
+    ['Laz', 3, 52],
     ['Thalandor', 3, 0],
-    ['Fosters', 3, 0],
     ['Hi', 3, 0],
+    ['Crak', 3, 0],
     ['Ruben', 2, 0],
     ['Matak', 2, 28],
     ['Zlo', 2, 0],
-    ['Zar', 2, 30],
+    ['Zar', 2, 47],
     ['Drip', 2, 12],
-    ['Kale', 2, 7],
-    ['Mat', 2, 0],
 
     ]
   },

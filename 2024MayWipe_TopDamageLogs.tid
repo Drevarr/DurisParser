@@ -1,4 +1,4 @@
-created: 20240725105122
+created: 20240801092427
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_TopDamageLogs
@@ -8,21 +8,21 @@ type: text/vnd.tiddlywiki
 |Rank |Log | Total Dmg| Max Dmg| Min Dmg| Avg Dmg| Pulses|h
 |1 |[[[42 Shadowmage] Guidrich o==(=Mithril=Knights=- (Grey Elf)|https://www.durismud.com/pvp/logs/297333]] | 1706| 1706| 1706| 1706.0| 1|
 |2 |[[[42 Shadowmage] Dze o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/297334]] | 1643| 1643| 1643| 1643.0| 1|
-|3 |[[[53 Earth Magus] Naj o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/300214]] | 1429| 1365| 9| 357.2| 4|
-|4 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298519]] | 2665| 1169| 3| 533.0| 5|
-|5 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298492]] | 2665| 1169| 3| 533.0| 5|
-|6 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298478]] | 1602| 1169| 433| 801.0| 2|
-|7 |[[[49 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298921]] | 1092| 1083| 1| 182.0| 6|
-|8 |[[[49 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298877]] | 1324| 982| 1| 264.8| 5|
-|9 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297128]] | 1782| 953| 47| 594.0| 3|
-|10 |[[[55 RaGeloRd] Choro *-* Clan Ragnarok *-* (Duergar)|https://www.durismud.com/pvp/logs/299846]] | 950| 950| 950| 950.0| 1|
-|11 |[[[50 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/299086]] | 1462| 933| 529| 731.0| 2|
-|12 |[[[50 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/299058]] | 933| 933| 933| 933.0| 1|
-|13 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299107]] | 2275| 893| 649| 758.3| 3|
-|14 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299080]] | 1820| 893| 95| 455.0| 4|
-|15 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299052]] | 1087| 893| 95| 362.3| 3|
-|16 |[[[46 Disharmonist] Zelth *-* Clan Ragnarok *-* (Vampire)|https://www.durismud.com/pvp/logs/298371]] | 1838| 840| 227| 459.5| 4|
-|17 |[[[46 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/298577]] | 1016| 790| 75| 338.7| 3|
-|18 |[[[46 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/298552]] | 1189| 790| 75| 396.3| 3|
-|19 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297181]] | 1031| 782| 47| 257.8| 4|
-|20 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297168]] | 829| 782| 47| 414.5| 2|
+|3 |[[[56 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/300660]] | 1750| 1418| 87| 437.5| 4|
+|4 |[[[56 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/300634]] | 2326| 1418| 82| 581.5| 4|
+|5 |[[[56 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/300616]] | 2326| 1418| 82| 581.5| 4|
+|6 |[[[53 Earth Magus] Naj o==(=Mithril=Knights=- (Vampire)|https://www.durismud.com/pvp/logs/300214]] | 1429| 1365| 9| 357.2| 4|
+|7 |[[[56 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/300663]] | 1975| 1327| 13| 329.2| 6|
+|8 |[[[56 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/300656]] | 1757| 1327| 158| 585.7| 3|
+|9 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298519]] | 2665| 1169| 3| 533.0| 5|
+|10 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298492]] | 2665| 1169| 3| 533.0| 5|
+|11 |[[[46 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298478]] | 1602| 1169| 433| 801.0| 2|
+|12 |[[[49 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298921]] | 1092| 1083| 1| 182.0| 6|
+|13 |[[[49 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/298877]] | 1324| 982| 1| 264.8| 5|
+|14 |[[[41 Elementalist] Omm *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/297128]] | 1782| 953| 47| 594.0| 3|
+|15 |[[[55 RaGeloRd] Choro *-* Clan Ragnarok *-* (Duergar)|https://www.durismud.com/pvp/logs/299846]] | 950| 950| 950| 950.0| 1|
+|16 |[[[50 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/299086]] | 1462| 933| 529| 731.0| 2|
+|17 |[[[50 Elementalist] Kaji *-* Clan Ragnarok *-* (Troll)|https://www.durismud.com/pvp/logs/299058]] | 933| 933| 933| 933.0| 1|
+|18 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299107]] | 2275| 893| 649| 758.3| 3|
+|19 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299080]] | 1820| 893| 95| 455.0| 4|
+|20 |[[[50 Enslaver] Ra *-* Clan Ragnarok *-* (Githyanki)|https://www.durismud.com/pvp/logs/299052]] | 1087| 893| 95| 362.3| 3|

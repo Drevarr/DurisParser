@@ -1,4 +1,4 @@
-created: 20240725105122
+created: 20240801092427
 creator: Drevarr
 tags: ChartData
 title: 2024MayWipe_EvilDeathsByName_Data
@@ -8,9 +8,9 @@ option = {
     dataset: {
     source: [
     ['Name', 'Deaths', 'No Deaths'],
-    ['Ra', 17, 106],
+    ['Ra', 18, 119],
     ['Cynee', 8, 1],
-    ['Omm', 7, 76],
+    ['Omm', 7, 86],
     ['Choron', 7, 14],
     ['Rotk', 7, 0],
     ['Sha', 6, 24],
@@ -18,21 +18,21 @@ option = {
     ['Zluag', 6, 2],
     ['Chilidus', 6, 1],
     ['Gukk', 5, 29],
-    ['Thugan', 5, 44],
+    ['Thugan', 5, 51],
+    ['Nos', 5, 11],
     ['Toki', 5, 0],
     ['Lodik', 5, 3],
     ['Yzarafk', 5, 0],
+    ['Lom', 5, 13],
     ['Zkr', 5, 17],
     ['Kymaz', 4, 0],
     ['Liels', 4, 25],
+    ['Wodo', 4, 33],
     ['Zhad', 4, 3],
     ['Kru', 4, 6],
     ['Moogrok', 4, 1],
     ['Feskarmann', 4, 0],
     ['Mori', 4, 1],
-    ['Lom', 4, 13],
-    ['Nobodyonderp', 4, 0],
-    ['Pohet', 3, 14],
 
     ]
   },

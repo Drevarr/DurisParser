@@ -932,6 +932,7 @@ option = {{
     type: 'value',
     name: 'Deaths',
     min: -1,
+    max: 25,
     nameLocation: 'center',
 	  nameGap: 45,
     }},
@@ -939,7 +940,7 @@ option = {{
     {{
       type: 'scatter',
       symbolSize: function (data) {{
-        return ((data[1]/(data[2]+1))*1.25);
+        return ((data[1]/(data[2]+1))*1.1);
       }},
       itemStyle: {{
         color: function(seriesIndex) {{
