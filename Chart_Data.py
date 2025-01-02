@@ -943,12 +943,12 @@ option = {{
       type: 'cross'
     }}
   }},
-  xAxis: {{ name: 'Fights' }},
+  xAxis: {{ name: 'Fights', nameLocation: 'center', nameGap: 45 }},
   yAxis: {{
     type: 'value',
     name: 'Deaths',
-    min: -1,
-    max: 25,
+    minInterval: 1,
+    inverse: true,
     nameLocation: 'center',
 	  nameGap: 45,
     }},

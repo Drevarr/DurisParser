@@ -1,4 +1,4 @@
-created: 20250102105903
+created: 20250102114245
 creator: Drevarr
 tags: ChartData
 title: 2024DecWipe_FightsVersusDeaths_Data
@@ -65,12 +65,12 @@ option = {
       type: 'cross'
     }
   },
-  xAxis: { name: 'Fights' },
+  xAxis: { name: 'Fights', nameLocation: 'center', nameGap: 45 },
   yAxis: {
     type: 'value',
     name: 'Deaths',
-    min: -1,
-    max: 25,
+    minInterval: 1,
+    inverse: true,
     nameLocation: 'center',
 	  nameGap: 45,
     },
