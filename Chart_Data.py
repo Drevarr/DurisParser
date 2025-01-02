@@ -11,7 +11,7 @@ LogNames={}
 NameCounts = {}
 
 # Connect to the database
-conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')
+conn = sqlite3.connect('PVP_Logs_Dec_2024_Wipe.db')
 cursor = conn.cursor()
 
 #RaceWar_Side, Frag_Level, Frag_Class, Frag_Name, Frag_Guild, Frag_Race, Good_Group, Good_Group_Logs, Evil_Group, Evil_Group_Logs
@@ -267,18 +267,18 @@ for item in DeathDates:
 
 #write echarts .tid file with chart data
 ChartList =[
-    '2024MayWipe_GroupSize_Data',
-    '2024MayWipe_TopDamageLogs',
-    '2024MayWipe_DeathByRaceGood_Data',
-    '2024MayWipe_DeathByRaceEvil_Data',
-    '2024MayWipe_DeathByDay_Data',
-    '2024MayWipe_DeathTotals',
-    '2024MayWipe_TotalDamage_Data',
-    '2024MayWipe_EvilDeathsByName_Data',
-    '2024MayWipe_GoodDeathsByName_Data',
-    '2024MayWipe_PlayerClassMaxDamage_Data',
-    '2024MayWipe_DeathLevels_Data',
-    '2024MayWipe_FightsVersusDeaths_Data'
+    '2024DecWipe_GroupSize_Data',
+    '2024DecWipe_TopDamageLogs',
+    '2024DecWipe_DeathByRaceGood_Data',
+    '2024DecWipe_DeathByRaceEvil_Data',
+    '2024DecWipe_DeathByDay_Data',
+    '2024DecWipe_DeathTotals',
+    '2024DecWipe_TotalDamage_Data',
+    '2024DecWipe_EvilDeathsByName_Data',
+    '2024DecWipe_GoodDeathsByName_Data',
+    '2024DecWipe_PlayerClassMaxDamage_Data',
+    '2024DecWipe_DeathLevels_Data',
+    '2024DecWipe_FightsVersusDeaths_Data'
     ]
 
 for item in ChartList:
@@ -291,7 +291,7 @@ type: text/vnd.tiddlywiki
 """
         f.write(print_String)
 
-        if item == '2024MayWipe_GroupSize_Data':
+        if item == '2024DecWipe_GroupSize_Data':
             print_String = f"""
             option = {{
             title: {{
@@ -347,7 +347,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_TopDamageLogs':
+        if item == '2024DecWipe_TopDamageLogs':
             #print top 20 pulse damage table
             POV_Keys = ['Log', 'Total', 'Max', 'Min', 'Avg', 'Pulses']
             url="https://www.durismud.com/pvp/logs/"
@@ -361,7 +361,7 @@ type: text/vnd.tiddlywiki
                 f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_DeathByRaceGood_Data':
+        if item == '2024DecWipe_DeathByRaceGood_Data':
             print_String = f"""
             option = {{
             title: {{
@@ -393,7 +393,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_DeathByRaceEvil_Data':
+        if item == '2024DecWipe_DeathByRaceEvil_Data':
             print_String = f"""
             option = {{
             title: {{
@@ -425,7 +425,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_DeathByDay_Data':
+        if item == '2024DecWipe_DeathByDay_Data':
             print_String = f"""
             option = {{
             title: {{
@@ -478,7 +478,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_DeathTotals':
+        if item == '2024DecWipe_DeathTotals':
             print_String = f"""
             option = {{
             title: {{
@@ -531,7 +531,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_TotalDamage_Data':
+        if item == '2024DecWipe_TotalDamage_Data':
             print_String = f"""
     var option = {{
         dataset: [{{
@@ -542,7 +542,12 @@ type: text/vnd.tiddlywiki
             print_String+=",\n"
             f.write(print_String)
             UpperBoundDamage=0
-            for i in range(100, -1, -1):
+
+            total_range=len(LogNames)-1
+            if total_range > 100:
+                total_range = 100
+
+            for i in range(total_range, -1, -1):  #change from 100 ot len(PovTotalDamageData)
                 DataList = []
                 NameAndLog = LogNames[PovTotalDamageData[i][0]]+"-Log:"+str(PovTotalDamageData[i][0])
                 DataList.append(NameAndLog)
@@ -563,7 +568,7 @@ type: text/vnd.tiddlywiki
 			dimension: 2, // means the 2nd column		
 			orient: 'horizontal',
 			left: 'center',
-			min: 100, // lower bound
+			min: 0, // lower bound
 			max: {UpperBoundDamage}, // upper bound
 			text: ['High Max Damage', 'Low Max Damage'],
 			inRange: {{
@@ -618,7 +623,7 @@ type: text/vnd.tiddlywiki
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_EvilDeathsByName_Data':
+        if item == '2024DecWipe_EvilDeathsByName_Data':
             sorted_dict = sorted(NamedDeaths['Evils'].items(), key=lambda x: x[1], reverse = True)
             print_String = f"""
 option = {{
@@ -627,8 +632,16 @@ option = {{
     ['Name', 'Deaths', 'No Deaths'],
 """
             f.write(print_String)
+            top_range=len(sorted_dict)
+            if top_range > 25:
+                top_range = 25
 
-            for i in range(25):
+            for i in range(top_range):
+                player_name = list(sorted_dict[i])[0]
+                death_count = list(sorted_dict[i])[1]
+                no_death_count = NameCounts[player_name] - death_count
+                output_string = f"    ['{player_name}', {death_count}, {no_death_count}],\n"
+                f.write(output_string)
                 pName=list(sorted_dict[i])[0]
                 numDeaths = list(sorted_dict[i])[1]
                 nonDeaths = NameCounts[pName] - numDeaths
@@ -658,7 +671,7 @@ option = {{
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_GoodDeathsByName_Data':
+        if item == '2024DecWipe_GoodDeathsByName_Data':
             sorted_dict = sorted(NamedDeaths['Goods'].items(), key=lambda x: x[1], reverse = True)
             print_String = f"""
 option = {{
@@ -667,8 +680,11 @@ option = {{
     ['Name', 'Deaths', 'No Deaths'],
 """
             f.write(print_String)
+            top_range=len(sorted_dict)
+            if top_range > 25:
+                top_range = 25
 
-            for i in range(25):
+            for i in range(top_range):
                 pName=list(sorted_dict[i])[0]
                 numDeaths = list(sorted_dict[i])[1]
                 nonDeaths = NameCounts[pName] - numDeaths
@@ -698,7 +714,7 @@ option = {{
             f.write(print_String)
             f.close()
         
-        if item == '2024MayWipe_PlayerClassMaxDamage_Data':
+        if item == '2024DecWipe_PlayerClassMaxDamage_Data':
             SpecList=[]
             for spec in sorted_PlayerClassMaxDamage:
                 SpecList.append(spec[0])
@@ -773,7 +789,7 @@ dataset: [
             f.write(print_String)
             f.close()
 
-        if item == '2024MayWipe_DeathLevels_Data':
+        if item == '2024DecWipe_DeathLevels_Data':
             print_String = f"\nconst deathDates = {DeathDates}"
 
             f.write(print_String)
@@ -883,7 +899,7 @@ option = {{
 
             f.close()
 
-        if item == '2024MayWipe_FightsVersusDeaths_Data':
+        if item == '2024DecWipe_FightsVersusDeaths_Data':
             sorted_Goods_dict = sorted(NamedDeaths['Goods'].items(), key=lambda x: x[1], reverse = True)
             sorted_Evils_dict = sorted(NamedDeaths['Evils'].items(), key=lambda x: x[1], reverse = True)
             print_String = f"""
@@ -940,7 +956,11 @@ option = {{
     {{
       type: 'scatter',
       symbolSize: function (data) {{
-        return ((data[1]/(data[2]+1))*1.1);
+          if (data[1] / (data[2] +1)< 5) {{
+            return 10;
+          }} else {{
+            return (data[1] / (data[2] +1)+25);
+          }}
       }},
       itemStyle: {{
         color: function(seriesIndex) {{

@@ -1,0 +1,28 @@
+created: 20250102105903
+creator: Drevarr
+tags: ChartData
+title: 2024DecWipe_TopDamageLogs
+type: text/vnd.tiddlywiki
+
+|thead-dark table-hover sortable w-75|k
+|Rank |Log | Total Dmg| Max Dmg| Min Dmg| Avg Dmg| Pulses|h
+|1 |[[[32 Necrolyte] Tarx  (Githzerai)|https://www.durismud.com/pvp/logs/302149]] | 163| 163| 163| 163.0| 1|
+|2 |[[[33 Shadowmage] Pok Brewed in Blood (Kobold)|https://www.durismud.com/pvp/logs/302144]] | 162| 129| 33| 81.0| 2|
+|3 |[[[33 Shadowmage] Pok Brewed in Blood (Kobold)|https://www.durismud.com/pvp/logs/302155]] | 102| 102| 102| 102.0| 1|
+|4 |[[[33 Shadowmage] Naj  (Drider)|https://www.durismud.com/pvp/logs/302083]] | 197| 86| 28| 65.7| 3|
+|5 |[[[33 Shadowmage] Nyx Brewed in Blood (Shade)|https://www.durismud.com/pvp/logs/302125]] | 257| 85| 4| 42.8| 6|
+|6 |[[[32 Shadowmage] Nyx  (Shade)|https://www.durismud.com/pvp/logs/302071]] | 262| 84| 48| 65.5| 4|
+|7 |[[[33 Shadowmage] Pok  (Kobold)|https://www.durismud.com/pvp/logs/302087]] | 84| 84| 84| 84.0| 1|
+|8 |[[[33 Shadowmage] Nyx Brewed in Blood (Shade)|https://www.durismud.com/pvp/logs/302153]] | 83| 83| 83| 83.0| 1|
+|9 |[[[33 Shadowmage] Nyx Brewed in Blood (Shade)|https://www.durismud.com/pvp/logs/302147]] | 83| 83| 83| 83.0| 1|
+|10 |[[[27 Mercenary] Javok  (ShadowBeast)|https://www.durismud.com/pvp/logs/302057]] | 128| 80| 2| 21.3| 6|
+|11 |[[[32 Shadowmage] Nyx  (Shade)|https://www.durismud.com/pvp/logs/302068]] | 114| 80| 34| 57.0| 2|
+|12 |[[[33 Spiritualist] Col  (Goblin)|https://www.durismud.com/pvp/logs/302085]] | 151| 80| 71| 75.5| 2|
+|13 |[[[33 Spiritualist] Col Brewed in Blood (Goblin)|https://www.durismud.com/pvp/logs/302137]] | 441| 78| 6| 55.1| 8|
+|14 |[[[32 Elementalist] Beltorin  (Shade)|https://www.durismud.com/pvp/logs/302059]] | 326| 74| 5| 54.3| 6|
+|15 |[[[33 Spiritualist] Col Brewed in Blood (Goblin)|https://www.durismud.com/pvp/logs/302116]] | 74| 74| 74| 74.0| 1|
+|16 |[[[32 Elementalist] Beltorin  (Shade)|https://www.durismud.com/pvp/logs/302053]] | 165| 73| 19| 55.0| 3|
+|17 |[[[32 Forest Druid] Morrigu < The Commonwealth > (Halfling)|https://www.durismud.com/pvp/logs/302130]] | 566| 70| 31| 40.4| 14|
+|18 |[[[24 Sorcerer] Naj  (Drider)|https://www.durismud.com/pvp/logs/302034]] | 168| 68| 42| 56.0| 3|
+|19 |[[[31 Shaman] Dzi  (Kobold)|https://www.durismud.com/pvp/logs/302081]] | 277| 67| 38| 46.2| 6|
+|20 |[[[33 Elaphidist] Zephyr Brewed in Blood (Githyanki)|https://www.durismud.com/pvp/logs/302152]] | 115| 64| 51| 57.5| 2|

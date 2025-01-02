@@ -1,38 +1,29 @@
-created: 20241110134434
+created: 20250102105903
 creator: Drevarr
 tags: ChartData
-title: 2024MayWipe_GoodDeathsByName_Data
+title: 2024DecWipe_GoodDeathsByName_Data
 type: text/vnd.tiddlywiki
 
 option = {
     dataset: {
     source: [
     ['Name', 'Deaths', 'No Deaths'],
-    ['Col', 9, 103],
-    ['Grimforest', 9, 1],
-    ['Jethrus', 8, 51],
-    ['Dze', 7, 62],
-    ['Fatfons', 7, 0],
-    ['Urmom', 7, 0],
-    ['Elak', 7, 0],
-    ['Naj', 6, 82],
-    ['Drisk', 6, 0],
-    ['Zloin', 5, 54],
-    ['Fosters', 5, 0],
-    ['Vessa', 5, 4],
-    ['Fysher', 5, 0],
-    ['Brenne', 4, 13],
-    ['Torpsi', 4, 34],
-    ['Aspy', 4, 0],
-    ['Fheer', 4, 12],
-    ['Torthri', 4, 1],
-    ['Duaonk', 4, 0],
-    ['Grimsorc', 3, 0],
-    ['Duac', 3, 10],
-    ['Yustro', 3, 15],
-    ['Nom', 3, 31],
-    ['Zar', 3, 49],
-    ['Jai', 3, 21],
+    ['Jait', 2, 0],
+    ['Gukk', 1, 0],
+    ['Tilia', 1, 0],
+    ['Hurgoth', 1, 0],
+    ['Phly', 1, 0],
+    ['Jai', 1, 3],
+    ['Rioss', 1, 4],
+    ['Risque', 1, 1],
+    ['Zkr', 1, 0],
+    ['Vokir', 1, 2],
+    ['Xeno', 1, 0],
+    ['Kaene', 1, 4],
+    ['Grutap', 1, 0],
+    ['Tarx', 1, 0],
+    ['Javok', 1, 3],
+    ['Jubei', 1, 0],
 
     ]
   },

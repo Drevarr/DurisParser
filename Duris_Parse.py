@@ -34,8 +34,10 @@ import sqlite3
 
 Num_Pages = 2
 
-#Last log fromm previous wipe: https://www.durismud.com/pvp/logs/295805
-Latest_Log = 295805
+#Last log fromm 2023 wipe: https://www.durismud.com/pvp/logs/295805
+#Last log fromm May 2024 wipe: https://www.durismud.com/pvp/logs/302011
+
+Latest_Log = 302011 #Ending log of May 2024 Wipe
 
 def Parse_Page(number, pages):
 
@@ -156,7 +158,7 @@ def Parse_Page(number, pages):
                     #con.commit()
 
 # Connect to the database
-conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')
+conn = sqlite3.connect('PVP_Logs_Dec_2024_Wipe.db')
 cursor = conn.cursor()
 
 
@@ -183,7 +185,7 @@ conn.execute('''CREATE TABLE IF NOT EXISTS Fight_Logs (
 conn.execute('''CREATE TABLE IF NOT EXISTS Logs (Log_Number PRIMARY KEY);''')
 
 # open the file in the write mode
-with open("PVP_Logs_May_2024_Wipe.csv", "w", newline='') as f:
+with open("PVP_Logs_Dec_2024_Wipe.csv", "w", newline='') as f:
     # create the csv writer
     writer = csv.writer(f)
 
@@ -201,4 +203,4 @@ with open("PVP_Logs_May_2024_Wipe.csv", "w", newline='') as f:
 conn.commit()
 conn.close()
 
-print ("Processing Complete. See file: PVP_Logs_May_2024_Wipe.csv or PVP_Logs.db")
+print ("Processing Complete. See file: PVP_Logs_Dec_2024_Wipe.csv or PVP_Logs.db")

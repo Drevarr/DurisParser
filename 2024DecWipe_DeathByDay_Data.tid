@@ -1,0 +1,54 @@
+created: 20250102105903
+creator: Drevarr
+tags: ChartData
+title: 2024DecWipe_DeathByDay_Data
+type: text/vnd.tiddlywiki
+
+            option = {
+            title: {
+                text: 'Deaths by Day'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['Evils', 'Goods']
+            },
+            dataZoom: [
+                {
+                type: 'inside',
+                xAxisIndex: [0, 1],
+                start: 0,
+                end: 100
+                },
+                {
+                show: true,
+                xAxisIndex: [0, 1],
+                type: 'slider',
+                bottom: 10,
+                start: 0,
+                end: 100
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                data: ['12/30/24', '12/31/24', '01/01/25', '01/02/25']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                data: [2, 4, 3, 3],
+                name: 'Evils',
+                type: 'line',
+                smooth: true
+                },
+                {
+                data: [2, 5, 4, 6],
+                name: 'Goods',
+                type: 'line',
+                smooth: true
+                }
+            ]
+            };

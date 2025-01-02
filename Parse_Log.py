@@ -20,7 +20,7 @@ URL = 'https://www.durismud.com/pvp/logs/'
 
 
 # Connect to the database
-conn = sqlite3.connect('PVP_Logs_May_2024_Wipe.db')
+conn = sqlite3.connect('PVP_Logs_Dec_2024_Wipe.db')
 cursor = conn.cursor()
 
 

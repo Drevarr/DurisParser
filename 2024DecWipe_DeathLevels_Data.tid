@@ -1,0 +1,103 @@
+created: 20250102105903
+creator: Drevarr
+tags: ChartData
+title: 2024DecWipe_DeathLevels_Data
+type: text/vnd.tiddlywiki
+
+const deathDates = ['12/30/24', '12/31/24', '01/01/25', '01/02/25']
+option = {
+  title: [
+    {
+      text: 'Death Level by Day',
+      left: 'center'
+    },
+    {
+      text: 'upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR',
+      borderColor: '#999',
+      borderWidth: 1,
+      textStyle: {
+        fontWeight: 'normal',
+        fontSize: 9,
+        lineHeight: 10
+      },
+      left: '10%',
+      top: '89%'
+    }
+  ],
+  dataset: [
+    {
+      // prettier-ignore
+      source: [[25, 22, 22, 20],
+[25, 21, 7, 20, 18, 26, 1, 21, 20],
+[29, 27, 6, 33, 33, 32, 31],
+[20, 17, 33, 32, 16, 32, 32, 33, 26],
+
+            ]
+    },
+    {
+      transform: {
+        type: 'boxplot',
+        config: {
+          itemNameFormatter: function (params) {
+            return deathDates[params.value];
+          }
+        }
+      }
+    },
+    {
+      fromDatasetIndex: 1,
+      fromTransformResult: 1
+    }
+  ],
+  tooltip: {
+    trigger: 'item',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    left: '10%',
+    right: '10%',
+    bottom: '15%'
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: true,
+    nameGap: 30,
+    splitArea: {
+      show: false
+    },
+    splitLine: {
+      show: false
+    }
+  },
+  yAxis: {
+    type: 'value',
+    name: 'Level',
+    splitArea: {
+      show: true
+    }
+  },
+  dataZoom: [
+  {
+    type: 'inside'
+  },
+  {
+    type: 'slider',
+    height: 20
+  }
+],
+  series: [
+    {
+      name: 'Death Level',
+      type: 'boxplot',
+      datasetIndex: 1,
+      encode:{tooltip: [ 1, 2, 3, 4, 5]},
+    },
+    {
+      name: 'outlier',
+      type: 'scatter',
+      datasetIndex: 2
+    }
+  ]
+};

@@ -1,12 +1,12 @@
-created: 20241110134434
+created: 20250102105903
 creator: Drevarr
 tags: ChartData
-title: 2024MayWipe_DeathByRaceGood_Data
+title: 2024DecWipe_DeathByRaceEvil_Data
 type: text/vnd.tiddlywiki
 
             option = {
             title: {
-                text: 'Good Race Deaths'
+                text: 'Evil Race Deaths'
             },
             tooltip: {
                 trigger: 'axis'
@@ -18,15 +18,15 @@ type: text/vnd.tiddlywiki
                 },
                 axisLabel: {
                   rotate: 30
-                },
-                data: ['Barbarian', 'Centaur', 'Dwarf', 'Firbolg', 'Githzerai', 'Gnome', 'Grey Elf', 'Halfling', 'Human', 'Minotaur', 'Shade', 'ShadowBeast', 'Thri-Kreen', 'Vampire']
+                },                
+                data: ['Drider', 'Drow Elf', 'Duergar', 'Goblin', 'Kobold', 'Shade']
             },
             yAxis: {
                 type: 'value'
             },
             series: [
                 {
-                data: [22, 17, 18, 2, 103, 10, 54, 30, 49, 2, 11, 2, 7, 38],
+                data: [1, 3, 1, 2, 1, 4],
                 type: 'bar'
                 }
             ]

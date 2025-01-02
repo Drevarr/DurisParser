@@ -1,0 +1,53 @@
+created: 20250102105903
+creator: Drevarr
+tags: ChartData
+title: 2024DecWipe_GroupSize_Data
+type: text/vnd.tiddlywiki
+
+            option = {
+            title: {
+                text: 'Average Group Size for Fights'
+                },
+            legend: {},
+            tooltip: {
+                trigger: 'axis',
+                confine: true
+                },
+            dataZoom: [
+                {
+                type: 'inside',
+                xAxisIndex: [0, 1],
+                start: 0,
+                end: 100
+                },
+                {
+                show: true,
+                xAxisIndex: [0, 1],
+                type: 'slider',
+                bottom: 10,
+                start: 0,
+                end: 100
+                }
+            ],
+            dataset: {
+                source: [
+                ['Date', 'Fights', 'Avg Goods', 'Avg Evils'],
+            
+                ['12/30/24', 4, 1.00, 2.75],
+                
+                ['12/31/24', 9, 2.00, 1.11],
+                
+                ['01/01/25', 7, 1.71, 2.43],
+                
+                ['01/02/25', 9, 1.44, 1.56],
+                
+            ]
+            },
+            xAxis: [{type: 'category', gridIndex: 0,},{type: 'category', gridIndex: 1,}],
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [{ type: 'line' }, { type: 'bar' }, { type: 'bar' }]
+            };
+        

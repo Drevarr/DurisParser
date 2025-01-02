@@ -1,0 +1,169 @@
+created: 20250102105903
+creator: Drevarr
+tags: ChartData
+title: 2024DecWipe_TotalDamage_Data
+type: text/vnd.tiddlywiki
+
+    var option = {
+        dataset: [{
+            source: [
+['Name+Log', 'Total Damage', 'Max Damage', 'Avg Damage', 'Total Pulses'],
+['[33 Shadowmage] Nyx Brewed in Blood (Shade)-Log:302115',0,0,0,0],
+['[31 Minstrel] Sadash < The Commonwealth > (Vampire)-Log:302131',0,0,0,0],
+['[16 Rogue] Jait  (Vampire)-Log:302145',0,0,0,0],
+['[30 Forest Druid] Vokir < The Commonwealth > (Halfling)-Log:302150',0,0,0,0],
+['[31 Forest Druid] Vokir < The Commonwealth > (Halfling)-Log:302151',0,0,0,0],
+['[17 Rogue] Jait  (Vampire)-Log:302156',0,0,0,0],
+['[20 Psionicist] Grutap  (Githzerai)-Log:302158',0,0,0,0],
+['[31 Animalist] Dzi  (Kobold)-Log:302084',0,0,0,0],
+['[33 Spiritualist] Col  (Goblin)-Log:302112',0,0,0,0],
+['[32 Forest Druid] Rioss  (Grey Elf)-Log:302107',0,0,0,0],
+['[32 Bounty Hunter] Kiria  (Barbarian)-Log:302106',0,0,0,0],
+['[ 6 Necromancer] Xeno  (Githzerai)-Log:302065',0,0,0,0],
+['[32 Air Magus] Vurt  (Goblin)-Log:302066',0,0,0,0],
+['[27 Druid] Vokir  (Halfling)-Log:302069',0,0,0,0],
+['[25 Monk] Gaulz  (Githyanki)-Log:302075',0,0,0,0],
+['[24 Cleric] Lormis  (Drow Elf)-Log:302073',0,0,0,0],
+['[24 Warrior] Faydz  (Troll)-Log:302072',0,0,0,0],
+['[29 Cleric] Zkr  (Halfling)-Log:302078',0,0,0,0],
+['[22 Monk] Zephyr  (Githyanki)-Log:302012',0,0,0,0],
+['[23 Shaman] Col  (Goblin)-Log:302035',0,0,0,0],
+['[ 1 Shaman] Psybar  (Shade)-Log:302044',0,0,0,0],
+['[24 Shaman] Jai  (Grey Elf)-Log:302043',0,0,0,0],
+['[29 Paladin] Kaene  (Githzerai)-Log:302042',0,0,0,0],
+['[26 Mercenary] Javok  (ShadowBeast)-Log:302040',0,0,0,0],
+['[26 Conjurer] Nom  (Drow Elf)-Log:302050',0,0,0,0],
+['[24 Shaman] Jai  (Grey Elf)-Log:302049',0,0,0,0],
+['[18 Shaman] Phly  (Centaur)-Log:302052',0,0,0,0],
+['[20 Cleric] Hurgoth  (Human)-Log:302054',0,0,0,0],
+['[ 7 Illusionist] Tilia  (Shade)-Log:302056',0,0,0,0],
+['[24 Monk] Risque  (Githzerai)-Log:302061',0,0,0,0],
+['[25 Cleric] Gukk  (Grey Elf)-Log:302060',0,0,0,0],
+['[26 Monk] Jubei < The Commonwealth > (Githzerai)-Log:302119',1,1,1.0,1],
+['[33 Shadowmage] Nyx  (Shade)-Log:302099',2,2,2.0,1],
+['[29 Paladin] Kaene  (Githzerai)-Log:302048',3,1,1.0,3],
+['[27 Mercenary] Javok  (ShadowBeast)-Log:302046',3,2,1.5,2],
+['[32 Guardian] Cis Brewed in Blood (Duergar)-Log:302117',4,4,4.0,1],
+['[26 Bard] Sadash  (Vampire)-Log:302039',6,6,6.0,1],
+['[32 Cavalier] Kaene  (Githzerai)-Log:302088',12,12,12.0,1],
+['[20 Monk] Risque  (Githzerai)-Log:302018',14,14,14.0,1],
+['[27 Druid] Morrigu  (Halfling)-Log:302041',15,15,15.0,1],
+['[32 Guardian] Cis Brewed in Blood (Duergar)-Log:302135',20,12,5.0,4],
+['[26 Bard] Sadash  (Vampire)-Log:302045',21,20,10.5,2],
+['[22 Shaman] Col  (Goblin)-Log:302015',25,25,25.0,1],
+['[33 Elementalist] Beltorin Brewed in Blood (Shade)-Log:302118',28,28,28.0,1],
+['[32 Cavalier] Kaene < The Commonwealth > (Githzerai)-Log:302129',30,8,5.0,6],
+['[32 Earth Magus] Zloin Brewed in Blood (Drow Elf)-Log:302157',32,14,10.7,3],
+['[25 Druid] Rioss  (Grey Elf)-Log:302019',33,33,33.0,1],
+['[32 Forest Druid] Morrigu  (Halfling)-Log:302089',35,35,35.0,1],
+['[32 Cavalier] Kaene < The Commonwealth > (Githzerai)-Log:302120',37,19,12.3,3],
+['[32 Forest Druid] Morrigu  (Halfling)-Log:302094',40,38,20.0,2],
+['[32 Forest Druid] Morrigu  (Halfling)-Log:302105',41,41,41.0,1],
+['[32 Bounty Hunter] Javok < The Commonwealth > (ShadowBeast)-Log:302143',51,17,10.2,5],
+['[22 Monk] Zephyr  (Githyanki)-Log:302026',52,18,17.3,3],
+['[22 Monk] Zephyr  (Githyanki)-Log:302030',52,18,17.3,3],
+['[32 Elementalist] Beltorin  (Shade)-Log:302063',56,56,56.0,1],
+['[22 Sorcerer] Naj  (Drider)-Log:302022',56,32,28.0,2],
+['[26 Sorcerer] Nyx  (Shade)-Log:302055',59,59,59.0,1],
+['[22 Shaman] Dzy  (Goblin)-Log:302016',70,38,35.0,2],
+['[33 Spiritualist] Col Brewed in Blood (Goblin)-Log:302116',74,74,74.0,1],
+['[20 Shaman] Jai  (Grey Elf)-Log:302036',74,41,37.0,2],
+['[21 Conjurer] Zloin  (Drow Elf)-Log:302038',74,46,37.0,2],
+['[25 Sorcerer] Nyx  (Shade)-Log:302051',74,33,24.7,3],
+['[31 Spiritualist] Jai  (Grey Elf)-Log:302109',78,45,39.0,2],
+['[32 Spiritualist] Col  (Goblin)-Log:302067',82,49,41.0,2],
+['[33 Shadowmage] Nyx Brewed in Blood (Shade)-Log:302147',83,83,83.0,1],
+['[33 Shadowmage] Nyx Brewed in Blood (Shade)-Log:302153',83,83,83.0,1],
+['[33 Shadowmage] Pok  (Kobold)-Log:302087',84,84,84.0,1],
+['[22 Shaman] Col  (Goblin)-Log:302028',87,27,17.4,5],
+['[31 Forest Druid] Morrigu  (Halfling)-Log:302080',95,55,31.7,3],
+['[21 Necromancer] Zlo  (Drow Elf)-Log:302058',96,25,10.7,9],
+['[33 Shadowmage] Pok Brewed in Blood (Kobold)-Log:302155',102,102,102.0,1],
+['[33 Elementalist] Beltorin  (Shade)-Log:302086',108,56,54.0,2],
+['[32 Shadowmage] Nyx  (Shade)-Log:302068',114,80,57.0,2],
+['[33 Elaphidist] Zephyr Brewed in Blood (Githyanki)-Log:302146',115,64,57.5,2],
+['[33 Elaphidist] Zephyr Brewed in Blood (Githyanki)-Log:302152',115,64,57.5,2],
+['[28 Druid] Rioss  (Grey Elf)-Log:302037',126,46,25.2,5],
+['[27 Mercenary] Javok  (ShadowBeast)-Log:302057',128,80,21.3,6],
+['[28 Druid] Morrigu  (Halfling)-Log:302047',132,51,33.0,4],
+['[22 Shaman] Dzy  (Goblin)-Log:302029',133,40,26.6,5],
+['[32 Assassin] Fraglo  (Dwarf)-Log:302108',148,49,37.0,4],
+['[22 Shaman] Dzy  (Goblin)-Log:302032',149,40,24.8,6],
+['[33 Spiritualist] Col  (Goblin)-Log:302085',151,80,75.5,2],
+['[23 Sorcerer] Nyx  (Shade)-Log:302027',153,32,25.5,6],
+['[33 Shadowmage] Pok Brewed in Blood (Kobold)-Log:302144',162,129,81.0,2],
+['[32 Necrolyte] Tarx  (Githzerai)-Log:302149',163,163,163.0,1],
+['[32 Elementalist] Beltorin  (Shade)-Log:302053',165,73,55.0,3],
+['[24 Sorcerer] Naj  (Drider)-Log:302034',168,68,56.0,3],
+['[23 Sorcerer] Nyx  (Shade)-Log:302031',186,33,26.6,7],
+['[33 Shadowmage] Naj  (Drider)-Log:302083',197,86,65.7,3],
+['[25 Druid] Rioss  (Grey Elf)-Log:302025',197,55,39.4,5],
+['[25 Druid] Rioss  (Grey Elf)-Log:302033',197,55,39.4,5],
+['[32 Elaphidist] Zephyr  (Githyanki)-Log:302070',220,54,24.4,9],
+['[33 Shadowmage] Nyx Brewed in Blood (Shade)-Log:302125',257,85,42.8,6],
+['[32 Shadowmage] Nyx  (Shade)-Log:302071',262,84,65.5,4],
+['[31 Shaman] Dzi  (Kobold)-Log:302081',277,67,46.2,6],
+['[32 Elementalist] Beltorin  (Shade)-Log:302059',326,74,54.3,6],
+['[32 Forest Druid] Morrigu < The Commonwealth > (Halfling)-Log:302121',364,45,36.4,10],
+['[33 Spiritualist] Col Brewed in Blood (Goblin)-Log:302137',441,78,55.1,8],
+['[32 Forest Druid] Morrigu < The Commonwealth > (Halfling)-Log:302130',566,70,40.4,14],
+
+		    ]
+		    }],
+		    visualMap: {
+			show: true,
+			dimension: 2, // means the 2nd column		
+			orient: 'horizontal',
+			left: 'center',
+			min: 0, // lower bound
+			max: 163, // upper bound
+			text: ['High Max Damage', 'Low Max Damage'],
+			inRange: {
+			// Size of the bubble.
+			symbolSize: [5, 50],
+			color: ['#65B581', '#FFCE34', '#FD665F']
+			}
+		    },			
+		    xAxis: {
+			type: 'value',
+			name: "Average Damage",
+			nameLocation: 'end',
+			nameGap: 15
+		    },
+		    yAxis: {
+			type: 'value',
+			name: "Total Damage",
+			nameLocation: 'center',
+			nameGap: 45,
+			min: 90
+		    },
+		    title: {
+			text:"Total Damage / Average Damage",
+			subtext: "Bubble Size based on Max Pulse Damage\nTop 100 based on Total Damage",
+			textAlign: "left",
+			padding: [0, 0, 15, 10],
+			top: 5
+			
+		    },
+		    grid: { 
+			top: '15%'
+		    },
+		    tooltip: {trigger: 'item',
+			    axisPointer: {
+			    type: 'shadow'
+			    },    
+		    },
+		    series: [
+			{
+			type: 'scatter',
+			encode: {
+			    // Map "amount" column to x-axis.
+			    x: 'Avg Damage',
+			    // Map "product" row to y-axis.
+			    y: 'Total Damage',
+			    // format tooltip
+			    tooltip: [0, 1, 2, 3, 4],
+			},	
+			}
+		    ]
+		    };

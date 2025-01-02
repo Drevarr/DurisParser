@@ -1,38 +1,31 @@
-created: 20241110134434
+created: 20250102105903
 creator: Drevarr
 tags: ChartData
-title: 2024MayWipe_EvilDeathsByName_Data
+title: 2024DecWipe_EvilDeathsByName_Data
 type: text/vnd.tiddlywiki
 
 option = {
     dataset: {
     source: [
     ['Name', 'Deaths', 'No Deaths'],
-    ['Ra', 18, 158],
-    ['Cynee', 8, 1],
-    ['Omm', 7, 108],
-    ['Choron', 7, 14],
-    ['Rotk', 7, 0],
-    ['Sha', 6, 24],
-    ['Keebler', 6, 9],
-    ['Zluag', 6, 6],
-    ['Zkr', 6, 18],
-    ['Chilidus', 6, 1],
-    ['Gukk', 5, 30],
-    ['Thugan', 5, 72],
-    ['Nos', 5, 25],
-    ['Toki', 5, 0],
-    ['Lodik', 5, 3],
-    ['Yzarafk', 5, 0],
-    ['Lom', 5, 13],
-    ['Kymaz', 4, 0],
-    ['Liels', 4, 25],
-    ['Wodo', 4, 49],
-    ['Zhad', 4, 3],
-    ['Kru', 4, 6],
-    ['Moogrok', 4, 1],
-    ['Feskarmann', 4, 0],
-    ['Mori', 4, 1],
+    ['Nyx', 3, 8],
+    ['Nyx', 3, 8],
+    ['Col', 2, 6],
+    ['Col', 2, 6],
+    ['Zlo', 1, 0],
+    ['Zlo', 1, 0],
+    ['Nom', 1, 0],
+    ['Nom', 1, 0],
+    ['Psybar', 1, 0],
+    ['Psybar', 1, 0],
+    ['Zloin', 1, 1],
+    ['Zloin', 1, 1],
+    ['Naj', 1, 2],
+    ['Naj', 1, 2],
+    ['Dzi', 1, 1],
+    ['Dzi', 1, 1],
+    ['Cis', 1, 1],
+    ['Cis', 1, 1],
 
     ]
   },
